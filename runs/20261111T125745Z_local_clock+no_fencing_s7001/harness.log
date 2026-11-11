@@ -1,0 +1,64 @@
+[    0.00s] config {"jobs": 600, "workers": 8, "kill_every": 0.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "db_crash_every": 0.0, "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1", "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 500.0, "work_ms_max": 2500.0, "mutation": "local_clock,no_fencing", "skew": 30.0, "timeout": 900.0, "seed": 7001, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/Users/sayfulla/Projects/soup/runs"}
+[    0.77s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    5.83s] progress {'cancelled': 30, 'running': 2, 'queued': 447, 'succeeded': 11} posts_left=200 kills=0 freezes=0
+[    6.20s] all POSTs done in 6.2s; waiting for cancels/conflicts
+[   10.84s] progress {'cancelled': 50, 'running': 3, 'queued': 525, 'succeeded': 22} posts_left=0 kills=0 freezes=0
+[   15.86s] progress {'succeeded': 34, 'cancelled': 50, 'queued': 510, 'running': 6} posts_left=0 kills=0 freezes=0
+[   20.88s] progress {'succeeded': 48, 'cancelled': 50, 'queued': 495, 'running': 7} posts_left=0 kills=0 freezes=0
+[   25.89s] progress {'succeeded': 62, 'cancelled': 50, 'queued': 481, 'running': 7} posts_left=0 kills=0 freezes=0
+[   30.91s] progress {'succeeded': 75, 'cancelled': 50, 'queued': 471, 'running': 4} posts_left=0 kills=0 freezes=0
+[   35.93s] progress {'succeeded': 86, 'cancelled': 50, 'queued': 461, 'running': 3} posts_left=0 kills=0 freezes=0
+[   40.95s] progress {'succeeded': 101, 'cancelled': 50, 'queued': 444, 'running': 5} posts_left=0 kills=0 freezes=0
+[   45.96s] progress {'succeeded': 109, 'failed': 1, 'cancelled': 50, 'queued': 439, 'running': 1} posts_left=0 kills=0 freezes=0
+[   50.98s] progress {'succeeded': 124, 'failed': 2, 'cancelled': 50, 'queued': 421, 'running': 3} posts_left=0 kills=0 freezes=0
+[   56.00s] progress {'succeeded': 137, 'failed': 2, 'cancelled': 50, 'queued': 404, 'running': 7} posts_left=0 kills=0 freezes=0
+[   61.02s] progress {'succeeded': 151, 'failed': 2, 'cancelled': 50, 'queued': 394, 'running': 3} posts_left=0 kills=0 freezes=0
+[   66.03s] progress {'succeeded': 165, 'failed': 2, 'cancelled': 50, 'queued': 377, 'running': 6} posts_left=0 kills=0 freezes=0
+[   71.04s] progress {'succeeded': 176, 'failed': 2, 'cancelled': 50, 'queued': 369, 'running': 3} posts_left=0 kills=0 freezes=0
+[   76.06s] progress {'succeeded': 190, 'failed': 2, 'cancelled': 50, 'queued': 354, 'running': 4} posts_left=0 kills=0 freezes=0
+[   81.08s] progress {'succeeded': 204, 'failed': 2, 'cancelled': 50, 'queued': 341, 'running': 3} posts_left=0 kills=0 freezes=0
+[   86.09s] progress {'succeeded': 217, 'failed': 2, 'cancelled': 50, 'queued': 325, 'running': 6} posts_left=0 kills=0 freezes=0
+[   91.11s] progress {'succeeded': 229, 'failed': 3, 'cancelled': 50, 'queued': 317, 'running': 1} posts_left=0 kills=0 freezes=0
+[   96.12s] progress {'succeeded': 245, 'failed': 4, 'cancelled': 50, 'queued': 295, 'running': 6} posts_left=0 kills=0 freezes=0
+[  101.14s] progress {'succeeded': 258, 'failed': 4, 'cancelled': 50, 'queued': 282, 'running': 6} posts_left=0 kills=0 freezes=0
+[  106.16s] progress {'succeeded': 272, 'failed': 4, 'cancelled': 50, 'queued': 269, 'running': 5} posts_left=0 kills=0 freezes=0
+[  111.18s] progress {'succeeded': 285, 'failed': 4, 'cancelled': 50, 'queued': 256, 'running': 5} posts_left=0 kills=0 freezes=0
+[  116.20s] progress {'succeeded': 300, 'failed': 4, 'cancelled': 50, 'queued': 243, 'running': 3} posts_left=0 kills=0 freezes=0
+[  121.21s] progress {'succeeded': 312, 'failed': 4, 'cancelled': 50, 'queued': 229, 'running': 5} posts_left=0 kills=0 freezes=0
+[  126.22s] progress {'succeeded': 330, 'failed': 5, 'cancelled': 50, 'queued': 214, 'running': 1} posts_left=0 kills=0 freezes=0
+[  131.25s] progress {'succeeded': 345, 'failed': 7, 'cancelled': 50, 'queued': 196, 'running': 2} posts_left=0 kills=0 freezes=0
+[  136.26s] progress {'succeeded': 353, 'failed': 8, 'cancelled': 50, 'queued': 181, 'running': 8} posts_left=0 kills=0 freezes=0
+[  141.28s] progress {'succeeded': 369, 'failed': 8, 'cancelled': 50, 'queued': 169, 'running': 4} posts_left=0 kills=0 freezes=0
+[  146.29s] progress {'succeeded': 380, 'failed': 9, 'cancelled': 50, 'queued': 159, 'running': 2} posts_left=0 kills=0 freezes=0
+[  151.31s] progress {'succeeded': 395, 'failed': 9, 'cancelled': 50, 'queued': 142, 'running': 4} posts_left=0 kills=0 freezes=0
+[  156.33s] progress {'succeeded': 408, 'failed': 9, 'cancelled': 50, 'queued': 132, 'running': 1} posts_left=0 kills=0 freezes=0
+[  161.35s] progress {'succeeded': 423, 'failed': 9, 'cancelled': 50, 'queued': 112, 'running': 6} posts_left=0 kills=0 freezes=0
+[  166.37s] progress {'succeeded': 436, 'failed': 9, 'cancelled': 50, 'queued': 101, 'running': 4} posts_left=0 kills=0 freezes=0
+[  171.38s] progress {'succeeded': 449, 'failed': 9, 'cancelled': 50, 'queued': 85, 'running': 7} posts_left=0 kills=0 freezes=0
+[  176.40s] progress {'succeeded': 468, 'failed': 9, 'cancelled': 50, 'queued': 69, 'running': 4} posts_left=0 kills=0 freezes=0
+[  181.41s] progress {'succeeded': 481, 'failed': 9, 'cancelled': 50, 'queued': 52, 'running': 8} posts_left=0 kills=0 freezes=0
+[  186.43s] progress {'succeeded': 496, 'failed': 9, 'cancelled': 50, 'queued': 39, 'running': 6} posts_left=0 kills=0 freezes=0
+[  191.45s] progress {'succeeded': 508, 'failed': 9, 'cancelled': 50, 'queued': 28, 'running': 5} posts_left=0 kills=0 freezes=0
+[  196.46s] progress {'succeeded': 522, 'failed': 10, 'cancelled': 50, 'queued': 17, 'running': 1} posts_left=0 kills=0 freezes=0
+[  201.49s] progress {'succeeded': 538, 'failed': 10, 'cancelled': 50, 'running': 2} posts_left=0 kills=0 freezes=0
+[  202.22s] drained=True after 202.2s
+[  202.55s] ========================================================================
+[  202.55s] PASS  no_lost_jobs                             violations=0
+[  202.55s] PASS  one_id_per_key                           violations=0
+[  202.55s] PASS  no_unexpected_jobs                       violations=0
+[  202.55s] PASS  conflicting_body_rejected                violations=0
+[  202.55s] PASS  at_most_one_effect                       violations=0
+[  202.55s] PASS  none_stuck                               violations=0
+[  202.55s] PASS  succeeded_has_exactly_one_effect         violations=0
+[  202.55s] PASS  non_succeeded_has_no_effect              violations=0
+[  202.55s] FAIL  effect_written_by_current_lease          violations=357  sample=[{'id': '54fe621e-6a5c-41d3-b7a9-d12e83e43a1b', 'job_token': 4, 'effect_token': 3, 'worker_id': 'w5.0'}, {'id': '17f87712-dce2-4b84-8309-908eaa1ed30d', 'job_token': 2, 'effect_token': 1, 'worker_id': 'w1.0'}, {'id': '1c763b75-cd3c-4909-80c4-d5a4b4f0dc40', 'job_token': 2, 'effect_token': 1, 'worker_id': 'w4.0'}, {'id': 'f9d07dac-7a58-487f-abf8-e6bd69f1177e', 'job_token': 2, 'effect_token': 1, 'worker_id': 'w3.0'}, {'id': '15c35fc3-285a-4cd2-905e-7fe1398095dd', 'job_token': 3, 'effect_token': 2, 'worker_id': 'w3.0'}]
+[  202.55s] PASS  no_double_claim                          violations=0
+[  202.55s] PASS  succeeded_never_cancel_requested         violations=0
+[  202.55s] PASS  accepted_cancel_ends_cancelled           violations=0
+[  202.55s] PASS  executions_at_least_one_per_succeeded    violations=0
+[  202.55s] ------------------------------------------------------------------------
+[  202.55s] stats   {"by_status": {"succeeded": 540, "failed": 10, "cancelled": 50}, "executions_per_job_histogram": {"0": 42, "1": 104, "2": 207, "3": 192, "4": 51, "5": 4}, "executions": 1318, "side_effects": 540, "jobs": 600}
+[  202.55s] http    {"cancel_running_202": 10, "cancel_running_409": 8, "cancel_scheduled_200": 42, "planned_posts": 990, "post_dup_concurrent_200": 122, "post_dup_concurrent_201": 65, "post_dup_late_200": 194, "post_dup_late_201": 9, "post_primary_200": 74, "post_primary_201": 496, "post_response_dropped": 30, "post_retry_after_drop_200": 30}
+[  202.55s] events  {"claimed": 1318, "finished": 558, "lease_lost": 515, "reaped": 760, "stale_result_dropped": 245, "worker_started": 8, "worker_stopped": 8}
+[  202.55s] chaos   kills=0 freezes=0 db_crashes=0 spawns=8 elapsed=202.5s
+[  202.55s] RESULT  FAIL  mutation=local_clock,no_fencing seed=7001

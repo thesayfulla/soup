@@ -1,0 +1,168 @@
+{
+  "ok": true,
+  "seed": 5001,
+  "args": {
+    "jobs": 50000,
+    "workers": 8,
+    "kill_every": 2.0,
+    "kill_jitter": 0.5,
+    "freeze_every": 0.0,
+    "freeze_for": null,
+    "db_crash_every": 0.0,
+    "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1",
+    "dup_ratio": 0.3,
+    "retry_ratio": 0.05,
+    "conflict_ratio": 0.01,
+    "cancel_ratio": 0.1,
+    "fail_ratio": 0.02,
+    "concurrency": 64,
+    "lease": 5.0,
+    "heartbeat": 1.0,
+    "work_ms_min": 20,
+    "work_ms_max": 120,
+    "mutation": "none",
+    "skew": 0.0,
+    "timeout": 2400.0,
+    "seed": 5001,
+    "runs": 1,
+    "port": 8100,
+    "db": "postgresql://soup:soup@postgres:5432/soup_chaos",
+    "out": "/app/runs"
+  },
+  "freeze_for": 11.0,
+  "checks": [
+    {
+      "name": "no_lost_jobs",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "every submitted key exists in the jobs table"
+    },
+    {
+      "name": "one_id_per_key",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "all replays of a key returned the same job id, matching the DB"
+    },
+    {
+      "name": "no_unexpected_jobs",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "conflicting_body_rejected",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "same key + different body must get 409"
+    },
+    {
+      "name": "at_most_one_effect",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "none_stuck",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "succeeded_has_exactly_one_effect",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "non_succeeded_has_no_effect",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "effect_written_by_current_lease",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "a mismatch means a stale (zombie) attempt committed the result"
+    },
+    {
+      "name": "no_double_claim",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "two executions holding the same fencing token = two owners at once"
+    },
+    {
+      "name": "succeeded_never_cancel_requested",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "an accepted cancel must win over completion"
+    },
+    {
+      "name": "accepted_cancel_ends_cancelled",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "executions_at_least_one_per_succeeded",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    }
+  ],
+  "stats": {
+    "by_status": {
+      "succeeded": 45446,
+      "failed": 921,
+      "cancelled": 3633
+    },
+    "executions_per_job_histogram": {
+      "0": 3478,
+      "1": 46370,
+      "2": 152
+    },
+    "executions": 46674,
+    "side_effects": 45446,
+    "jobs": 50000
+  },
+  "http": {
+    "planned_posts": 79588,
+    "post_response_dropped": 2500,
+    "post_primary_201": 41842,
+    "post_dup_concurrent_201": 5450,
+    "post_primary_200": 5658,
+    "post_dup_concurrent_200": 9281,
+    "post_retry_after_drop_200": 2500,
+    "post_dup_late_201": 279,
+    "post_dup_late_200": 14578,
+    "cancel_running_409": 205,
+    "cancel_scheduled_409": 19,
+    "cancel_scheduled_200": 3478,
+    "cancel_scheduled_202": 3,
+    "cancel_running_202": 1295
+  },
+  "events": {
+    "worker_started": 224,
+    "claimed": 46673,
+    "finished": 46462,
+    "reaped": 212,
+    "worker_stopped": 7
+  },
+  "kills": 217,
+  "freezes": 0,
+  "db_crashes": 0,
+  "elapsed_s": 474.86
+}

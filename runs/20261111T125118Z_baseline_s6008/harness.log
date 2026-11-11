@@ -1,0 +1,32 @@
+[    0.00s] config {"jobs": 20000, "workers": 8, "kill_every": 0.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "db_crash_every": 0.0, "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1", "dup_ratio": 0.0, "retry_ratio": 0.0, "conflict_ratio": 0.0, "cancel_ratio": 0.0, "fail_ratio": 0.0, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 0.0, "work_ms_max": 1.0, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 6008, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/Users/sayfulla/Projects/soup/runs"}
+[    0.76s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    5.83s] progress {'queued': 2, 'succeeded': 776} posts_left=19161 kills=0 freezes=0
+[   10.84s] progress {'queued': 1, 'succeeded': 3632} posts_left=16306 kills=0 freezes=0
+[   15.86s] progress {'running': 1, 'queued': 9, 'succeeded': 6519} posts_left=13408 kills=0 freezes=0
+[   20.88s] progress {'running': 5, 'queued': 34, 'succeeded': 9616} posts_left=10284 kills=0 freezes=0
+[   25.90s] progress {'queued': 22, 'succeeded': 12503} posts_left=7415 kills=0 freezes=0
+[   30.94s] progress {'queued': 5, 'succeeded': 14101} posts_left=5835 kills=0 freezes=0
+[   35.95s] progress {'queued': 22, 'succeeded': 16340} posts_left=3577 kills=0 freezes=0
+[   40.97s] progress {'succeeded': 19352, 'queued': 3, 'running': 1} posts_left=583 kills=0 freezes=0
+[   42.02s] all POSTs done in 42.0s; waiting for cancels/conflicts
+[   43.05s] drained=True after 43.0s
+[   50.78s] ========================================================================
+[   50.78s] PASS  no_lost_jobs                             violations=0
+[   50.78s] PASS  one_id_per_key                           violations=0
+[   50.78s] PASS  no_unexpected_jobs                       violations=0
+[   50.78s] PASS  conflicting_body_rejected                violations=0
+[   50.78s] PASS  at_most_one_effect                       violations=0
+[   50.78s] PASS  none_stuck                               violations=0
+[   50.78s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   50.78s] PASS  non_succeeded_has_no_effect              violations=0
+[   50.78s] PASS  effect_written_by_current_lease          violations=0
+[   50.78s] PASS  no_double_claim                          violations=0
+[   50.78s] PASS  succeeded_never_cancel_requested         violations=0
+[   50.78s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   50.78s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   50.78s] ------------------------------------------------------------------------
+[   50.78s] stats   {"by_status": {"succeeded": 20000}, "executions_per_job_histogram": {"1": 20000}, "executions": 20000, "side_effects": 20000, "jobs": 20000}
+[   50.78s] http    {"planned_posts": 20000, "post_primary_201": 20000}
+[   50.78s] events  {"claimed": 20000, "finished": 20000, "worker_started": 8, "worker_stopped": 8}
+[   50.78s] chaos   kills=0 freezes=0 db_crashes=0 spawns=8 elapsed=50.7s
+[   50.78s] RESULT  PASS  mutation=none seed=6008

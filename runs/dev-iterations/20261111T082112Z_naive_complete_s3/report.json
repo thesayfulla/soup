@@ -1,0 +1,256 @@
+{
+  "ok": false,
+  "seed": 3,
+  "args": {
+    "jobs": 400,
+    "workers": 8,
+    "kill_every": 2.0,
+    "kill_jitter": 0.5,
+    "freeze_every": 2.0,
+    "freeze_for": 7.0,
+    "dup_ratio": 0.3,
+    "retry_ratio": 0.05,
+    "conflict_ratio": 0.01,
+    "cancel_ratio": 0.1,
+    "fail_ratio": 0.02,
+    "concurrency": 64,
+    "lease": 5.0,
+    "heartbeat": 1.0,
+    "work_ms_min": 500.0,
+    "work_ms_max": 2500.0,
+    "mutation": "naive_complete",
+    "skew": 0.0,
+    "timeout": 900.0,
+    "seed": 3,
+    "runs": 1,
+    "port": 8100,
+    "db": "postgresql://soup:soup@localhost:55432/soup_chaos",
+    "out": "/private/tmp/claude-501/-Users-sayfulla--claude-spares-spare-evGrUB/09dcb3e3-dff3-4d16-9fc0-b6e62ab524b2/scratchpad/runs"
+  },
+  "freeze_for": 7.0,
+  "checks": [
+    {
+      "name": "no_lost_jobs",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "every submitted key exists in the jobs table"
+    },
+    {
+      "name": "one_id_per_key",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "all replays of a key returned the same job id, matching the DB"
+    },
+    {
+      "name": "no_unexpected_jobs",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "conflicting_body_rejected",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "same key + different body must get 409"
+    },
+    {
+      "name": "at_most_one_effect",
+      "ok": false,
+      "count": 37,
+      "sample": [
+        {
+          "job_id": "e0361536-6c43-44a0-9b3e-6d6c21cce53e",
+          "n": 2
+        },
+        {
+          "job_id": "052091a0-f627-4fd0-a946-627aa4d502e7",
+          "n": 2
+        },
+        {
+          "job_id": "929f81b8-1fe5-4f66-a92c-1984af6b65f4",
+          "n": 2
+        },
+        {
+          "job_id": "054f2e89-df9c-4667-a529-bf9380cd4838",
+          "n": 2
+        },
+        {
+          "job_id": "01cece43-65b5-44c9-bb93-8d63c6207837",
+          "n": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "none_stuck",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "succeeded_has_exactly_one_effect",
+      "ok": false,
+      "count": 37,
+      "sample": [
+        {
+          "id": "e0361536-6c43-44a0-9b3e-6d6c21cce53e",
+          "n": 2
+        },
+        {
+          "id": "052091a0-f627-4fd0-a946-627aa4d502e7",
+          "n": 2
+        },
+        {
+          "id": "929f81b8-1fe5-4f66-a92c-1984af6b65f4",
+          "n": 2
+        },
+        {
+          "id": "054f2e89-df9c-4667-a529-bf9380cd4838",
+          "n": 2
+        },
+        {
+          "id": "01cece43-65b5-44c9-bb93-8d63c6207837",
+          "n": 2
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "non_succeeded_has_no_effect",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    },
+    {
+      "name": "effect_written_by_current_lease",
+      "ok": false,
+      "count": 51,
+      "sample": [
+        {
+          "id": "c883e4e8-21b9-4c4d-91c1-2041f8344f09",
+          "job_token": 2,
+          "effect_token": 1,
+          "worker_id": "w6.1"
+        },
+        {
+          "id": "4c675d60-dc4d-4dc8-a983-7e76a875b826",
+          "job_token": 2,
+          "effect_token": 1,
+          "worker_id": "w0.0"
+        },
+        {
+          "id": "5a3654ce-356b-4b86-85df-623de9e7f7c7",
+          "job_token": 2,
+          "effect_token": 1,
+          "worker_id": "w1.1"
+        },
+        {
+          "id": "df8b7e75-cafb-4feb-8d27-9c2880d006b3",
+          "job_token": 2,
+          "effect_token": 1,
+          "worker_id": "w7.3"
+        },
+        {
+          "id": "f06451b2-da1e-45a4-a5fa-b0f5aff92243",
+          "job_token": 2,
+          "effect_token": 1,
+          "worker_id": "w4.1"
+        }
+      ],
+      "note": "a mismatch means a stale (zombie) attempt committed the result"
+    },
+    {
+      "name": "no_double_claim",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": "two executions holding the same fencing token = two owners at once"
+    },
+    {
+      "name": "succeeded_never_cancel_requested",
+      "ok": false,
+      "count": 2,
+      "sample": [
+        {
+          "id": "590ac189-9765-480e-b536-86c0b560f189"
+        },
+        {
+          "id": "9bf487aa-58bd-4651-b300-fbec46151cf9"
+        }
+      ],
+      "note": "an accepted cancel must win over completion"
+    },
+    {
+      "name": "accepted_cancel_ends_cancelled",
+      "ok": false,
+      "count": 2,
+      "sample": [
+        [
+          "590ac189-9765-480e-b536-86c0b560f189",
+          "succeeded"
+        ],
+        [
+          "9bf487aa-58bd-4651-b300-fbec46151cf9",
+          "succeeded"
+        ]
+      ],
+      "note": ""
+    },
+    {
+      "name": "executions_at_least_one_per_succeeded",
+      "ok": true,
+      "count": 0,
+      "sample": [],
+      "note": ""
+    }
+  ],
+  "stats": {
+    "by_status": {
+      "succeeded": 363,
+      "failed": 6,
+      "cancelled": 31
+    },
+    "executions_per_job_histogram": {
+      "0": 27,
+      "1": 272,
+      "2": 88,
+      "3": 11,
+      "4": 1,
+      "5": 1
+    },
+    "executions": 490,
+    "side_effects": 400,
+    "jobs": 400
+  },
+  "http": {
+    "planned_posts": 658,
+    "post_primary_201": 343,
+    "post_dup_concurrent_201": 53,
+    "post_primary_200": 57,
+    "post_dup_concurrent_200": 80,
+    "post_ReadTimeout": 1,
+    "post_dup_late_200": 122,
+    "post_dup_late_201": 3,
+    "cancel_running_202": 11,
+    "cancel_scheduled_200": 27,
+    "cancel_running_409": 1,
+    "cancel_scheduled_202": 1
+  },
+  "events": {
+    "worker_started": 86,
+    "claimed": 490,
+    "finished": 412,
+    "reaped": 118,
+    "lease_lost": 8,
+    "worker_stopped": 6
+  },
+  "kills": 80,
+  "freezes": 80,
+  "elapsed_s": 161.13
+}

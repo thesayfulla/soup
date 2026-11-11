@@ -1,0 +1,9 @@
+started_utc	run_dir	mutation	seed	jobs	workers	kill_every	freeze_every	result	failed_checks
+20261111T081425Z	20261111T081425Z_baseline_s1	none	1	500	8	2.0	0.0	PASS	-
+20261111T081452Z	20261111T081452Z_no_fencing_s2	no_fencing	2	1000	8	2.0	3.0	PASS	-
+20261111T081509Z	20261111T081509Z_racy_claim_s2	racy_claim	2	1000	8	2.0	3.0	FAIL	no_double_claim
+20261111T081528Z	20261111T081528Z_naive_complete_s2	naive_complete	2	1000	8	2.0	3.0	FAIL	succeeded_never_cancel_requested,accepted_cancel_ends_cancelled
+20261111T081607Z	20261111T081607Z_baseline_s3	none	3	400	8	2.0	2.0	PASS	-
+20261111T081848Z	20261111T081848Z_no_fencing_s3	no_fencing	3	400	8	2.0	2.0	FAIL	effect_written_by_current_lease
+20261111T082112Z	20261111T082112Z_naive_complete_s3	naive_complete	3	400	8	2.0	2.0	FAIL	at_most_one_effect,succeeded_has_exactly_one_effect,effect_written_by_current_lease,succeeded_never_cancel_requested,accepted_cancel_ends_cancelled
+20261111T082644Z	20261111T082644Z_baseline_s7	none	7	1000	8	2.0	0.0	PASS	-

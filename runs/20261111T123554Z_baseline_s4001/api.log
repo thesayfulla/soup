@@ -1,0 +1,24 @@
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: could not receive data from server: Connection refused
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: could not receive data from server: Connection refused
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: could not receive data from server: Connection refused
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: could not receive data from server: Connection refused
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: could not receive data from server: Connection refused
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: could not receive data from server: Connection refused
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: FATAL:  the database system is starting up
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: FATAL:  the database system is starting up
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: FATAL:  the database system is starting up
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+error connecting in 'pool-1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: '55432', hostaddr: '::1': connection failed: connection to server at "::1", port 55432 failed: FATAL:  the database system is starting up
+- host: 'localhost', port: '55432', hostaddr: '127.0.0.1': connection failed: connection to server at "127.0.0.1", port 55432 failed: FATAL:  the database system is starting up

@@ -1,0 +1,77 @@
+[    0.00s] config {"jobs": 6000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "db_crash_every": 6.0, "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1", "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 32, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 20, "work_ms_max": 120, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 4002, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/Users/sayfulla/Projects/soup/runs"}
+[    0.98s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    3.05s] kill -9 slot=6 pid=42587 worker=w6.0 (total 1)
+[    5.42s] kill -9 slot=0 pid=42581 worker=w0.0 (total 2)
+[    6.01s] progress {'cancelled': 19, 'running': 10, 'queued': 470, 'failed': 9, 'succeeded': 504} posts_left=8024 kills=2 freezes=0
+[    7.19s] POSTGRES CRASH #1 rc=0  (0.2s)
+[    7.32s] kill -9 slot=3 pid=42584 worker=w3.0 (total 3)
+[    8.91s] kill -9 slot=1 pid=42582 worker=w1.0 (total 4)
+[   11.04s] progress {'cancelled': 85, 'running': 17, 'queued': 732, 'failed': 16, 'succeeded': 954} posts_left=6776 kills=4 freezes=0
+[   11.32s] kill -9 slot=6 pid=42590 worker=w6.1 (total 5)
+[   13.38s] POSTGRES CRASH #2 rc=0  (0.2s)
+[   13.77s] kill -9 slot=4 pid=42585 worker=w4.0 (total 6)
+[   16.07s] progress {'cancelled': 132, 'running': 18, 'queued': 808, 'failed': 26, 'succeeded': 1403} posts_left=5806 kills=6 freezes=0
+[   16.13s] kill -9 slot=6 pid=42603 worker=w6.2 (total 7)
+[   18.00s] kill -9 slot=6 pid=42609 worker=w6.3 (total 8)
+[   19.57s] POSTGRES CRASH #3 rc=0  (0.2s)
+[   20.34s] kill -9 slot=4 pid=42607 worker=w4.1 (total 9)
+[   21.10s] progress {'cancelled': 179, 'running': 18, 'queued': 918, 'failed': 38, 'succeeded': 1831} posts_left=4841 kills=9 freezes=0
+[   22.35s] kill -9 slot=2 pid=42583 worker=w2.0 (total 10)
+[   24.77s] kill -9 slot=7 pid=42588 worker=w7.0 (total 11)
+[   25.76s] POSTGRES CRASH #4 rc=0  (0.2s)
+[   26.12s] progress {'cancelled': 216, 'running': 8, 'queued': 955, 'failed': 49, 'succeeded': 2298} posts_left=3987 kills=11 freezes=0
+[   26.29s] kill -9 slot=6 pid=42613 worker=w6.4 (total 12)
+[   28.12s] kill -9 slot=2 pid=42618 worker=w2.1 (total 13)
+[   30.60s] kill -9 slot=4 pid=42617 worker=w4.2 (total 14)
+[   31.14s] progress {'cancelled': 273, 'running': 11, 'queued': 1216, 'failed': 61, 'succeeded': 2792} posts_left=2633 kills=14 freezes=0
+[   31.95s] POSTGRES CRASH #5 rc=0  (0.2s)
+[   32.41s] kill -9 slot=7 pid=42620 worker=w7.1 (total 15)
+[   34.35s] kill -9 slot=0 pid=42591 worker=w0.1 (total 16)
+[   36.16s] progress {'cancelled': 326, 'running': 16, 'queued': 1450, 'failed': 66, 'succeeded': 3245} posts_left=1458 kills=16 freezes=0
+[   36.72s] kill -9 slot=3 pid=42596 worker=w3.1 (total 17)
+[   38.13s] POSTGRES CRASH #6 rc=0  (0.2s)
+[   38.23s] kill -9 slot=7 pid=42633 worker=w7.2 (total 18)
+[   39.83s] kill -9 slot=1 pid=42602 worker=w1.1 (total 19)
+[   41.19s] progress {'cancelled': 384, 'running': 18, 'queued': 1594, 'failed': 75, 'succeeded': 3689} posts_left=420 kills=19 freezes=0
+[   42.04s] kill -9 slot=5 pid=42586 worker=w5.0 (total 20)
+[   43.29s] all POSTs done in 43.2s; waiting for cancels/conflicts
+[   43.75s] kill -9 slot=1 pid=42644 worker=w1.2 (total 21)
+[   44.33s] POSTGRES CRASH #7 rc=0  (0.2s)
+[   45.77s] kill -9 slot=7 pid=42643 worker=w7.3 (total 22)
+[   46.20s] progress {'cancelled': 407, 'running': 18, 'queued': 1364, 'failed': 83, 'succeeded': 4128} posts_left=0 kills=22 freezes=0
+[   47.67s] kill -9 slot=0 pid=42635 worker=w0.2 (total 23)
+[   49.91s] kill -9 slot=4 pid=42629 worker=w4.3 (total 24)
+[   50.53s] POSTGRES CRASH #8 rc=0  (0.2s)
+[   51.21s] progress {'cancelled': 414, 'running': 15, 'queued': 910, 'failed': 91, 'succeeded': 4570} posts_left=0 kills=24 freezes=0
+[   51.59s] kill -9 slot=1 pid=42647 worker=w1.3 (total 25)
+[   53.15s] kill -9 slot=3 pid=42636 worker=w3.2 (total 26)
+[   55.41s] kill -9 slot=6 pid=42624 worker=w6.5 (total 27)
+[   56.23s] progress {'cancelled': 414, 'running': 11, 'queued': 428, 'failed': 103, 'succeeded': 5044} posts_left=0 kills=27 freezes=0
+[   56.74s] POSTGRES CRASH #9 rc=0  (0.2s)
+[   57.09s] kill -9 slot=4 pid=42657 worker=w4.4 (total 28)
+[   59.02s] kill -9 slot=0 pid=42654 worker=w0.3 (total 29)
+[   61.24s] progress {'cancelled': 414, 'running': 17, 'queued': 8, 'failed': 113, 'succeeded': 5448} posts_left=0 kills=29 freezes=0
+[   61.45s] kill -9 slot=3 pid=42662 worker=w3.3 (total 30)
+[   62.94s] POSTGRES CRASH #10 rc=0  (0.2s)
+[   62.96s] kill -9 slot=5 pid=42646 worker=w5.1 (total 31)
+[   64.58s] drained=True after 64.5s
+[   65.38s] ========================================================================
+[   65.38s] PASS  no_lost_jobs                             violations=0
+[   65.38s] PASS  one_id_per_key                           violations=0
+[   65.38s] PASS  no_unexpected_jobs                       violations=0
+[   65.38s] PASS  conflicting_body_rejected                violations=0
+[   65.38s] PASS  at_most_one_effect                       violations=0
+[   65.38s] PASS  none_stuck                               violations=0
+[   65.38s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   65.38s] PASS  non_succeeded_has_no_effect              violations=0
+[   65.38s] PASS  effect_written_by_current_lease          violations=0
+[   65.38s] PASS  no_double_claim                          violations=0
+[   65.38s] PASS  succeeded_never_cancel_requested         violations=0
+[   65.38s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   65.38s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   65.38s] ------------------------------------------------------------------------
+[   65.38s] stats   {"by_status": {"cancelled": 414, "failed": 113, "succeeded": 5473}, "executions_per_job_histogram": {"0": 395, "1": 5529, "2": 75, "3": 1}, "executions": 5682, "side_effects": 5473, "jobs": 6000}
+[   65.38s] http    {"cancel_running_202": 122, "cancel_running_409": 58, "cancel_scheduled_200": 395, "cancel_scheduled_202": 1, "cancel_scheduled_409": 24, "cancel_scheduled_500": 1, "planned_posts": 9537, "post_ReadError": 1, "post_dup_concurrent_200": 1181, "post_dup_concurrent_201": 619, "post_dup_late_200": 1722, "post_dup_late_201": 15, "post_primary_200": 617, "post_primary_201": 5083, "post_primary_500": 1, "post_response_dropped": 300, "post_retry_after_drop_200": 300}
+[   65.38s] events  {"claimed": 5681, "db_error": 80, "finished": 5588, "reaped": 93, "worker_started": 39, "worker_stopped": 8}
+[   65.38s] chaos   kills=31 freezes=0 db_crashes=10 spawns=39 elapsed=65.3s
+[   65.38s] RESULT  PASS  mutation=none seed=4002

@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: soup
+      POSTGRES_PASSWORD: soup
+      POSTGRES_DB: soup
+    ports:
+      - "55432:5432"   # host port 55432 to avoid clashing with a local Postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U soup -d soup"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    command: uvicorn app.api:app --host 0.0.0.0 --port 8000
+    environment: &env
+      DATABASE_URL: postgresql://soup:soup@postgres:5432/soup
+      TEST_DATABASE_URL: postgresql://soup:soup@postgres:5432/soup_test
+      CHAOS_DATABASE_URL: postgresql://soup:soup@postgres:5432/soup_chaos
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  workers:
+    build: .
+    command: python -m worker.supervisor --workers 4
+    environment: *env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # docker compose --profile chaos run --rm chaos [--runs 3 --freeze-every 3 ...]
+  # Uses its own database (soup_chaos) and spawns its own API + 8 workers.
+  chaos:
+    build: .
+    profiles: ["chaos"]
+    entrypoint: ["python", "-m", "chaos.run"]
+    environment: *env
+    volumes:
+      - ./runs:/app/runs
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # docker compose --profile load run --rm --service-ports locust
+  locust:
+    build: .
+    profiles: ["load"]
+    entrypoint: ["locust", "-f", "loadtest/locustfile.py", "--host", "http://api:8000"]
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./runs:/app/runs
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

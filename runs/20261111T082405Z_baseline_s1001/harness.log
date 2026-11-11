@@ -1,0 +1,88 @@
+[    0.00s] config {"jobs": 10000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 20, "work_ms_max": 120, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 1001, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/Users/sayfulla/Projects/soup/runs"}
+[    0.75s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    2.30s] kill -9 slot=6 pid=38977 worker=w6.0 (total 1)
+[    4.17s] kill -9 slot=6 pid=38979 worker=w6.1 (total 2)
+[    5.81s] progress {'cancelled': 3, 'running': 9, 'queued': 91, 'failed': 10, 'succeeded': 474} posts_left=15102 kills=2 freezes=0
+[    6.06s] kill -9 slot=6 pid=38983 worker=w6.2 (total 3)
+[    8.00s] kill -9 slot=3 pid=38974 worker=w3.0 (total 4)
+[   10.29s] kill -9 slot=7 pid=38978 worker=w7.0 (total 5)
+[   10.83s] progress {'cancelled': 97, 'running': 11, 'queued': 1335, 'failed': 23, 'succeeded': 982} posts_left=12143 kills=5 freezes=0
+[   12.21s] kill -9 slot=4 pid=38975 worker=w4.0 (total 6)
+[   13.87s] kill -9 slot=2 pid=38973 worker=w2.0 (total 7)
+[   15.85s] progress {'cancelled': 209, 'running': 10, 'queued': 2148, 'failed': 34, 'succeeded': 1494} posts_left=9778 kills=7 freezes=0
+[   16.31s] kill -9 slot=3 pid=38987 worker=w3.1 (total 8)
+[   18.32s] kill -9 slot=6 pid=38984 worker=w6.3 (total 9)
+[   20.60s] kill -9 slot=3 pid=38995 worker=w3.2 (total 10)
+[   20.87s] progress {'cancelled': 307, 'running': 10, 'queued': 3007, 'failed': 39, 'succeeded': 2006} posts_left=7391 kills=10 freezes=0
+[   22.40s] kill -9 slot=6 pid=38996 worker=w6.4 (total 11)
+[   24.71s] kill -9 slot=0 pid=38971 worker=w0.0 (total 12)
+[   25.88s] progress {'cancelled': 400, 'running': 10, 'queued': 4192, 'failed': 48, 'succeeded': 2528} posts_left=4537 kills=12 freezes=0
+[   27.02s] kill -9 slot=3 pid=38997 worker=w3.3 (total 13)
+[   28.70s] kill -9 slot=6 pid=38998 worker=w6.5 (total 14)
+[   30.90s] progress {'cancelled': 539, 'running': 10, 'queued': 5232, 'failed': 61, 'succeeded': 3045} posts_left=1803 kills=14 freezes=0
+[   31.16s] kill -9 slot=5 pid=38976 worker=w5.0 (total 15)
+[   33.61s] kill -9 slot=0 pid=39003 worker=w0.1 (total 16)
+[   34.12s] all POSTs done in 34.1s; waiting for cancels/conflicts
+[   35.30s] kill -9 slot=7 pid=38988 worker=w7.1 (total 17)
+[   35.91s] progress {'cancelled': 668, 'running': 11, 'queued': 5714, 'failed': 68, 'succeeded': 3539} posts_left=0 kills=17 freezes=0
+[   37.02s] kill -9 slot=2 pid=38993 worker=w2.1 (total 18)
+[   38.93s] kill -9 slot=0 pid=39010 worker=w0.2 (total 19)
+[   40.77s] kill -9 slot=0 pid=39016 worker=w0.3 (total 20)
+[   40.92s] progress {'cancelled': 678, 'running': 10, 'queued': 5195, 'failed': 74, 'succeeded': 4043} posts_left=0 kills=20 freezes=0
+[   42.84s] kill -9 slot=2 pid=39015 worker=w2.2 (total 21)
+[   45.07s] kill -9 slot=7 pid=39014 worker=w7.2 (total 22)
+[   45.93s] progress {'cancelled': 678, 'running': 10, 'queued': 4690, 'failed': 89, 'succeeded': 4533} posts_left=0 kills=22 freezes=0
+[   46.71s] kill -9 slot=3 pid=39004 worker=w3.4 (total 23)
+[   48.69s] kill -9 slot=0 pid=39018 worker=w0.4 (total 24)
+[   50.73s] kill -9 slot=0 pid=39026 worker=w0.5 (total 25)
+[   50.94s] progress {'succeeded': 5043, 'failed': 94, 'cancelled': 678, 'queued': 4175, 'running': 10} posts_left=0 kills=25 freezes=0
+[   53.08s] kill -9 slot=3 pid=39025 worker=w3.5 (total 26)
+[   55.35s] kill -9 slot=4 pid=38989 worker=w4.1 (total 27)
+[   55.96s] progress {'succeeded': 5537, 'failed': 100, 'cancelled': 678, 'queued': 3675, 'running': 10} posts_left=0 kills=27 freezes=0
+[   57.76s] kill -9 slot=4 pid=39037 worker=w4.2 (total 28)
+[   59.57s] kill -9 slot=6 pid=39007 worker=w6.6 (total 29)
+[   60.97s] progress {'succeeded': 6036, 'failed': 108, 'cancelled': 678, 'queued': 3168, 'running': 10} posts_left=0 kills=29 freezes=0
+[   61.29s] kill -9 slot=7 pid=39024 worker=w7.3 (total 30)
+[   63.46s] kill -9 slot=4 pid=39043 worker=w4.3 (total 31)
+[   65.51s] kill -9 slot=0 pid=39028 worker=w0.6 (total 32)
+[   65.98s] progress {'succeeded': 6547, 'failed': 125, 'cancelled': 678, 'queued': 2639, 'running': 11} posts_left=0 kills=32 freezes=0
+[   67.12s] kill -9 slot=3 pid=39033 worker=w3.6 (total 33)
+[   69.38s] kill -9 slot=3 pid=39052 worker=w3.7 (total 34)
+[   71.00s] progress {'succeeded': 7039, 'failed': 139, 'cancelled': 678, 'queued': 2134, 'running': 10} posts_left=0 kills=34 freezes=0
+[   71.59s] kill -9 slot=1 pid=38972 worker=w1.0 (total 35)
+[   73.87s] kill -9 slot=7 pid=39046 worker=w7.4 (total 36)
+[   76.01s] progress {'succeeded': 7524, 'failed': 155, 'cancelled': 678, 'queued': 1633, 'running': 10} posts_left=0 kills=36 freezes=0
+[   76.10s] kill -9 slot=0 pid=39051 worker=w0.7 (total 37)
+[   78.24s] kill -9 slot=1 pid=39065 worker=w1.1 (total 38)
+[   80.00s] kill -9 slot=7 pid=39069 worker=w7.5 (total 39)
+[   81.02s] progress {'succeeded': 8013, 'failed': 167, 'cancelled': 678, 'queued': 1131, 'running': 11} posts_left=0 kills=39 freezes=0
+[   81.93s] kill -9 slot=4 pid=39047 worker=w4.4 (total 40)
+[   83.96s] kill -9 slot=7 pid=39073 worker=w7.6 (total 41)
+[   85.96s] kill -9 slot=7 pid=39081 worker=w7.7 (total 42)
+[   86.03s] progress {'succeeded': 8515, 'failed': 176, 'cancelled': 678, 'queued': 621, 'running': 10} posts_left=0 kills=42 freezes=0
+[   87.72s] kill -9 slot=5 pid=39008 worker=w5.1 (total 43)
+[   89.30s] kill -9 slot=7 pid=39085 worker=w7.8 (total 44)
+[   91.04s] progress {'succeeded': 9018, 'failed': 185, 'cancelled': 678, 'queued': 109, 'running': 10} posts_left=0 kills=44 freezes=0
+[   91.62s] kill -9 slot=0 pid=39071 worker=w0.8 (total 45)
+[   93.19s] kill -9 slot=0 pid=39088 worker=w0.9 (total 46)
+[   94.50s] drained=True after 94.5s
+[   95.97s] ========================================================================
+[   95.97s] PASS  no_lost_jobs                             violations=0
+[   95.97s] PASS  one_id_per_key                           violations=0
+[   95.97s] PASS  no_unexpected_jobs                       violations=0
+[   95.97s] PASS  conflicting_body_rejected                violations=0
+[   95.97s] PASS  at_most_one_effect                       violations=0
+[   95.97s] PASS  none_stuck                               violations=0
+[   95.97s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   95.97s] PASS  non_succeeded_has_no_effect              violations=0
+[   95.97s] PASS  effect_written_by_current_lease          violations=0
+[   95.97s] PASS  no_double_claim                          violations=0
+[   95.97s] PASS  succeeded_never_cancel_requested         violations=0
+[   95.97s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   95.97s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   95.97s] ------------------------------------------------------------------------
+[   95.97s] stats   {"by_status": {"succeeded": 9134, "failed": 188, "cancelled": 678}, "executions_per_job_histogram": {"0": 653, "1": 9320, "2": 27}, "executions": 9374, "side_effects": 9134, "jobs": 10000}
+[   95.97s] http    {"cancel_running_202": 236, "cancel_running_409": 64, "cancel_scheduled_200": 653, "cancel_scheduled_409": 47, "planned_posts": 15995, "post_ReadTimeout": 2, "post_dup_concurrent_200": 1831, "post_dup_concurrent_201": 1149, "post_dup_late_200": 2955, "post_dup_late_201": 60, "post_primary_200": 1211, "post_primary_201": 8789}
+[   95.97s] events  {"claimed": 9374, "finished": 9330, "reaped": 44, "worker_started": 54, "worker_stopped": 8}
+[   95.97s] chaos   kills=46 freezes=0 spawns=54 elapsed=95.9s
+[   95.97s] RESULT  PASS  mutation=none seed=1001

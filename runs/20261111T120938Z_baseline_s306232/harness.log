@@ -1,0 +1,51 @@
+[    0.00s] config {"jobs": 400, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 2.0, "freeze_for": 7.0, "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 500.0, "work_ms_max": 2500.0, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 306232, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@postgres:5432/soup_chaos", "out": "/app/runs"}
+[    0.25s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    2.14s] all POSTs done in 2.1s; waiting for cancels/conflicts
+[    2.25s] SIGSTOP slot=5 worker=w5.0 for 7.0s (total 1)
+[    2.43s] kill -9 slot=6 pid=23 worker=w6.0 (total 1)
+[    4.03s] kill -9 slot=7 pid=24 worker=w7.0 (total 2)
+[    4.26s] SIGSTOP slot=7 worker=w7.1 for 7.0s (total 2)
+[    5.27s] progress {'cancelled': 28, 'running': 20, 'queued': 325, 'failed': 1, 'succeeded': 26} posts_left=0 kills=2 freezes=2
+[    6.24s] kill -9 slot=4 pid=21 worker=w4.0 (total 3)
+[    6.26s] SIGSTOP slot=0 worker=w0.0 for 7.0s (total 3)
+[    8.12s] kill -9 slot=2 pid=19 worker=w2.0 (total 4)
+[    8.26s] SIGSTOP slot=3 worker=w3.0 for 7.0s (total 4)
+[   10.26s] SIGSTOP slot=1 worker=w1.0 for 7.0s (total 5)
+[   10.28s] progress {'cancelled': 30, 'running': 19, 'queued': 298, 'failed': 1, 'succeeded': 52} posts_left=0 kills=4 freezes=5
+[   10.52s] kill -9 slot=5 pid=22 worker=w5.0 (total 5)
+[   12.27s] SIGSTOP slot=6 worker=w6.1 for 7.0s (total 6)
+[   12.83s] kill -9 slot=5 pid=53 worker=w5.1 (total 6)
+[   14.27s] SIGSTOP slot=2 worker=w2.1 for 7.0s (total 7)
+[   15.11s] kill -9 slot=0 pid=17 worker=w0.0 (total 7)
+[   15.29s] progress {'cancelled': 30, 'running': 17, 'queued': 276, 'failed': 1, 'succeeded': 76} posts_left=0 kills=7 freezes=7
+[   16.28s] SIGSTOP slot=3 worker=w3.0 for 7.0s (total 8)
+[   16.91s] kill -9 slot=4 pid=48 worker=w4.1 (total 8)
+[   18.28s] SIGSTOP slot=7 worker=w7.1 for 7.0s (total 9)
+[   19.00s] kill -9 slot=4 pid=59 worker=w4.2 (total 9)
+[   20.28s] SIGSTOP slot=1 worker=w1.0 for 7.0s (total 10)
+[   20.29s] progress {'cancelled': 30, 'running': 19, 'queued': 246, 'failed': 1, 'succeeded': 104} posts_left=0 kills=9 freezes=10
+[   20.52s] kill -9 slot=5 pid=55 worker=w5.2 (total 10)
+[   22.28s] SIGSTOP slot=2 worker=w2.1 for 7.0s (total 11)
+[   22.63s] kill -9 slot=5 pid=63 worker=w5.3 (total 11)
+[   24.29s] SIGSTOP slot=5 worker=w5.4 for 7.0s (total 12)
+[   24.95s] kill -9 slot=0 pid=57 worker=w0.1 (total 12)
+[   25.31s] progress {'succeeded': 128, 'failed': 2, 'cancelled': 30, 'queued': 223, 'running': 17} posts_left=0 kills=12 freezes=12
+[   26.29s] SIGSTOP slot=7 worker=w7.1 for 7.0s (total 13)
+[   26.63s] kill -9 slot=6 pid=44 worker=w6.1 (total 13)
+[   28.30s] SIGSTOP slot=1 worker=w1.0 for 7.0s (total 14)
+[   28.71s] kill -9 slot=3 pid=20 worker=w3.0 (total 14)
+[   30.30s] SIGSTOP slot=6 worker=w6.2 for 7.0s (total 15)
+[   30.32s] progress {'succeeded': 155, 'failed': 3, 'cancelled': 30, 'queued': 195, 'running': 17} posts_left=0 kills=14 freezes=15
+[   30.38s] kill -9 slot=0 pid=67 worker=w0.2 (total 15)
+[   32.31s] SIGSTOP slot=5 worker=w5.4 for 7.0s (total 16)
+[   32.73s] kill -9 slot=3 pid=71 worker=w3.1 (total 16)
+[   34.24s] kill -9 slot=3 pid=75 worker=w3.2 (total 17)
+[   34.31s] SIGSTOP slot=4 worker=w4.3 for 7.0s (total 17)
+[   35.33s] progress {'succeeded': 180, 'failed': 3, 'cancelled': 30, 'queued': 171, 'running': 16} posts_left=0 kills=17 freezes=17
+[   36.31s] SIGSTOP slot=0 worker=w0.3 for 7.0s (total 18)
+[   36.49s] kill -9 slot=7 pid=45 worker=w7.1 (total 18)
+[   38.32s] SIGSTOP slot=7 worker=w7.2 for 7.0s (total 19)
+[   38.48s] kill -9 slot=2 pid=50 worker=w2.1 (total 19)
+[   40.00s] kill -9 slot=6 pid=69 worker=w6.2 (total 20)
+[   40.32s] SIGSTOP slot=1 worker=w1.0 for 7.0s (total 20)
+[   40.35s] progress {'succeeded': 204, 'failed': 3, 'cancelled': 30, 'queued': 144, 'running': 19} posts_left=0 kills=20 freezes=20

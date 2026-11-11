@@ -1,0 +1,40 @@
+[    0.00s] config {"jobs": 1000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 3.0, "freeze_for": 6.0, "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "mutation": "racy_claim", "skew": 0.0, "timeout": 900.0, "seed": 2, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/private/tmp/claude-501/-Users-sayfulla--claude-spares-spare-evGrUB/09dcb3e3-dff3-4d16-9fc0-b6e62ab524b2/scratchpad/runs"}
+[    0.73s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    2.72s] kill -9 slot=0 pid=38175 worker=w0.0 (total 1)
+[    3.76s] SIGSTOP slot=1 worker=w1.0 for 6.0s (total 1)
+[    4.44s] kill -9 slot=7 pid=38182 worker=w7.0 (total 2)
+[    5.79s] progress {'cancelled': 6, 'running': 7, 'queued': 115, 'failed': 9, 'succeeded': 377} posts_left=844 kills=2 freezes=1
+[    6.68s] kill -9 slot=0 pid=38183 worker=w0.1 (total 3)
+[    6.76s] SIGSTOP slot=5 worker=w5.0 for 6.0s (total 2)
+[    7.24s] all POSTs done in 7.2s; waiting for cancels/conflicts
+[    8.76s] kill -9 slot=0 pid=38186 worker=w0.2 (total 4)
+[    9.77s] SIGSTOP slot=0 worker=w0.3 for 6.0s (total 3)
+[   10.58s] kill -9 slot=4 pid=38179 worker=w4.0 (total 5)
+[   10.80s] progress {'cancelled': 46, 'running': 7, 'queued': 227, 'failed': 15, 'succeeded': 705} posts_left=0 kills=5 freezes=3
+[   12.77s] SIGSTOP slot=4 worker=w4.1 for 6.0s (total 4)
+[   12.84s] kill -9 slot=1 pid=38176 worker=w1.0 (total 6)
+[   15.04s] kill -9 slot=1 pid=38193 worker=w1.1 (total 7)
+[   15.77s] SIGSTOP slot=3 worker=w3.0 for 6.0s (total 5)
+[   15.81s] progress {'cancelled': 46, 'running': 1, 'failed': 21, 'succeeded': 932} posts_left=0 kills=7 freezes=5
+[   16.62s] kill -9 slot=0 pid=38187 worker=w0.3 (total 8)
+[   17.99s] drained=True after 18.0s
+[   18.23s] ========================================================================
+[   18.23s] PASS  no_lost_jobs                             violations=0
+[   18.23s] PASS  one_id_per_key                           violations=0
+[   18.23s] PASS  no_unexpected_jobs                       violations=0
+[   18.23s] PASS  conflicting_body_rejected                violations=0
+[   18.23s] PASS  at_most_one_effect                       violations=0
+[   18.23s] PASS  none_stuck                               violations=0
+[   18.23s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   18.23s] PASS  non_succeeded_has_no_effect              violations=0
+[   18.23s] PASS  effect_written_by_current_lease          violations=0
+[   18.23s] FAIL  no_double_claim                          violations=161  sample=[{'job_id': '90048a74-2504-4d75-9cda-18eebca0b085', 'fencing_token': 1, 'n': 2, 'workers': ['w3.0', 'w4.1']}, {'job_id': '84faf17a-fc06-49aa-9a50-f9665748c0f9', 'fencing_token': 1, 'n': 2, 'workers': ['w6.0', 'w4.1']}, {'job_id': '01e79d00-3970-4e95-b999-3f75a2d7a9b0', 'fencing_token': 1, 'n': 2, 'workers': ['w1.0', 'w4.0']}, {'job_id': '8be34bb5-6b98-45a9-bbfd-1f1f2167c892', 'fencing_token': 1, 'n': 2, 'workers': ['w7.1', 'w3.0']}, {'job_id': '7ba14c3f-9e89-4f94-a0ff-70965616cc69', 'fencing_token': 1, 'n': 2, 'workers': ['w6.0', 'w3.0']}]
+[   18.23s] PASS  succeeded_never_cancel_requested         violations=0
+[   18.23s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   18.23s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   18.23s] ------------------------------------------------------------------------
+[   18.23s] stats   {"by_status": {"cancelled": 46, "failed": 21, "succeeded": 933}, "executions_per_job_histogram": {"0": 43, "1": 792, "2": 147, "3": 17, "4": 1}, "executions": 1141, "side_effects": 933, "jobs": 1000}
+[   18.23s] http    {"cancel_running_202": 24, "cancel_running_409": 6, "cancel_scheduled_200": 43, "cancel_scheduled_409": 27, "planned_posts": 1637, "post_dup_concurrent_200": 186, "post_dup_concurrent_201": 118, "post_dup_late_200": 323, "post_dup_late_201": 10, "post_primary_200": 128, "post_primary_201": 872}
+[   18.23s] events  {"claimed": 1141, "finished": 954, "reaped": 7, "stale_result_dropped": 182, "worker_started": 16, "worker_stopped": 8}
+[   18.23s] chaos   kills=8 freezes=5 spawns=16 elapsed=18.2s
+[   18.23s] RESULT  FAIL  mutation=racy_claim seed=2

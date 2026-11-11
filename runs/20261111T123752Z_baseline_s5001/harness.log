@@ -1,0 +1,327 @@
+[    0.00s] config {"jobs": 50000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "db_crash_every": 0.0, "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1", "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 20, "work_ms_max": 120, "mutation": "none", "skew": 0.0, "timeout": 2400.0, "seed": 5001, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@postgres:5432/soup_chaos", "out": "/app/runs"}
+[    0.26s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    2.68s] kill -9 slot=6 pid=23 worker=w6.0 (total 1)
+[    4.75s] kill -9 slot=5 pid=22 worker=w5.0 (total 2)
+[    5.35s] progress {'cancelled': 21, 'running': 10, 'queued': 449, 'failed': 7, 'succeeded': 546} posts_left=77959 kills=2 freezes=0
+[    7.18s] kill -9 slot=6 pid=40 worker=w6.1 (total 3)
+[    9.61s] kill -9 slot=1 pid=18 worker=w1.0 (total 4)
+[   10.36s] progress {'cancelled': 190, 'running': 10, 'queued': 2743, 'failed': 22, 'succeeded': 1080} posts_left=73190 kills=4 freezes=0
+[   12.09s] kill -9 slot=6 pid=43 worker=w6.2 (total 5)
+[   14.04s] kill -9 slot=7 pid=24 worker=w7.0 (total 6)
+[   15.37s] progress {'cancelled': 387, 'running': 10, 'queued': 4939, 'failed': 37, 'succeeded': 1625} posts_left=68476 kills=6 freezes=0
+[   16.09s] kill -9 slot=4 pid=21 worker=w4.0 (total 7)
+[   17.96s] kill -9 slot=1 pid=44 worker=w1.1 (total 8)
+[   20.27s] kill -9 slot=1 pid=48 worker=w1.2 (total 9)
+[   20.39s] progress {'cancelled': 628, 'running': 11, 'queued': 7389, 'failed': 44, 'succeeded': 2176} posts_left=63453 kills=9 freezes=0
+[   22.59s] kill -9 slot=7 pid=46 worker=w7.1 (total 10)
+[   24.52s] kill -9 slot=7 pid=50 worker=w7.2 (total 11)
+[   25.40s] progress {'cancelled': 874, 'running': 10, 'queued': 9864, 'failed': 51, 'succeeded': 2728} posts_left=58226 kills=11 freezes=0
+[   26.63s] kill -9 slot=4 pid=47 worker=w4.1 (total 12)
+[   28.93s] kill -9 slot=0 pid=17 worker=w0.0 (total 13)
+[   30.41s] progress {'cancelled': 1102, 'running': 10, 'queued': 12281, 'failed': 65, 'succeeded': 3288} posts_left=53040 kills=13 freezes=0
+[   30.73s] kill -9 slot=7 pid=51 worker=w7.3 (total 14)
+[   32.25s] kill -9 slot=0 pid=54 worker=w0.1 (total 15)
+[   33.77s] kill -9 slot=5 pid=41 worker=w5.1 (total 16)
+[   35.42s] progress {'cancelled': 1312, 'running': 11, 'queued': 14786, 'failed': 76, 'succeeded': 3824} posts_left=47830 kills=16 freezes=0
+[   35.81s] kill -9 slot=0 pid=58 worker=w0.2 (total 17)
+[   37.36s] kill -9 slot=5 pid=59 worker=w5.2 (total 18)
+[   39.50s] kill -9 slot=7 pid=57 worker=w7.4 (total 19)
+[   40.44s] progress {'cancelled': 1544, 'running': 10, 'queued': 17232, 'failed': 85, 'succeeded': 4385} posts_left=42599 kills=19 freezes=0
+[   41.11s] kill -9 slot=3 pid=20 worker=w3.0 (total 20)
+[   42.98s] kill -9 slot=5 pid=61 worker=w5.3 (total 21)
+[   44.54s] kill -9 slot=6 pid=45 worker=w6.3 (total 22)
+[   45.45s] progress {'cancelled': 1779, 'running': 11, 'queued': 19688, 'failed': 98, 'succeeded': 4938} posts_left=37399 kills=22 freezes=0
+[   46.58s] kill -9 slot=5 pid=64 worker=w5.4 (total 23)
+[   48.45s] kill -9 slot=3 pid=63 worker=w3.1 (total 24)
+[   50.46s] progress {'cancelled': 2042, 'running': 10, 'queued': 22087, 'failed': 108, 'succeeded': 5485} posts_left=32163 kills=24 freezes=0
+[   50.66s] kill -9 slot=0 pid=60 worker=w0.3 (total 25)
+[   53.05s] kill -9 slot=6 pid=65 worker=w6.4 (total 26)
+[   54.70s] kill -9 slot=2 pid=19 worker=w2.0 (total 27)
+[   55.48s] progress {'cancelled': 2243, 'running': 11, 'queued': 24525, 'failed': 119, 'succeeded': 6034} posts_left=27153 kills=27 freezes=0
+[   56.21s] kill -9 slot=1 pid=49 worker=w1.3 (total 28)
+[   57.90s] kill -9 slot=6 pid=72 worker=w6.5 (total 29)
+[   59.76s] kill -9 slot=4 pid=52 worker=w4.2 (total 30)
+[   60.49s] progress {'cancelled': 2461, 'running': 11, 'queued': 26856, 'failed': 130, 'succeeded': 6546} posts_left=22107 kills=30 freezes=0
+[   62.13s] kill -9 slot=4 pid=76 worker=w4.3 (total 31)
+[   64.56s] kill -9 slot=6 pid=75 worker=w6.6 (total 32)
+[   65.51s] progress {'cancelled': 2737, 'running': 10, 'queued': 29279, 'failed': 140, 'succeeded': 7068} posts_left=16938 kills=32 freezes=0
+[   66.23s] kill -9 slot=3 pid=67 worker=w3.2 (total 33)
+[   68.73s] kill -9 slot=6 pid=78 worker=w6.7 (total 34)
+[   70.52s] progress {'succeeded': 7616, 'failed': 152, 'cancelled': 2952, 'queued': 31842, 'running': 10} posts_left=11715 kills=34 freezes=0
+[   70.65s] kill -9 slot=2 pid=73 worker=w2.1 (total 35)
+[   73.01s] kill -9 slot=3 pid=79 worker=w3.3 (total 36)
+[   75.36s] kill -9 slot=3 pid=85 worker=w3.4 (total 37)
+[   75.53s] progress {'succeeded': 8155, 'failed': 166, 'cancelled': 3157, 'queued': 34451, 'running': 11} posts_left=6413 kills=37 freezes=0
+[   77.32s] kill -9 slot=2 pid=84 worker=w2.2 (total 38)
+[   79.44s] kill -9 slot=7 pid=62 worker=w7.5 (total 39)
+[   80.55s] progress {'succeeded': 8684, 'failed': 182, 'cancelled': 3418, 'queued': 36964, 'running': 10} posts_left=1187 kills=39 freezes=0
+[   81.74s] all POSTs done in 81.7s; waiting for cancels/conflicts
+[   81.81s] kill -9 slot=5 pid=66 worker=w5.5 (total 40)
+[   83.59s] kill -9 slot=4 pid=77 worker=w4.4 (total 41)
+[   85.49s] kill -9 slot=3 pid=86 worker=w3.5 (total 42)
+[   85.56s] progress {'succeeded': 9216, 'failed': 195, 'cancelled': 3540, 'queued': 37040, 'running': 9} posts_left=0 kills=42 freezes=0
+[   87.59s] kill -9 slot=2 pid=87 worker=w2.3 (total 43)
+[   89.61s] kill -9 slot=7 pid=88 worker=w7.6 (total 44)
+[   90.57s] progress {'succeeded': 9716, 'failed': 210, 'cancelled': 3562, 'queued': 36502, 'running': 10} posts_left=0 kills=44 freezes=0
+[   91.99s] kill -9 slot=3 pid=94 worker=w3.6 (total 45)
+[   93.58s] kill -9 slot=4 pid=93 worker=w4.5 (total 46)
+[   95.34s] kill -9 slot=7 pid=96 worker=w7.7 (total 47)
+[   95.59s] progress {'succeeded': 10229, 'failed': 219, 'cancelled': 3577, 'queued': 35964, 'running': 11} posts_left=0 kills=47 freezes=0
+[   97.04s] kill -9 slot=6 pid=83 worker=w6.8 (total 48)
+[   99.35s] kill -9 slot=3 pid=97 worker=w3.7 (total 49)
+[  100.61s] progress {'succeeded': 10760, 'failed': 229, 'cancelled': 3583, 'queued': 35418, 'running': 10} posts_left=0 kills=49 freezes=0
+[  101.01s] kill -9 slot=7 pid=99 worker=w7.8 (total 50)
+[  102.60s] kill -9 slot=3 pid=101 worker=w3.8 (total 51)
+[  104.64s] kill -9 slot=4 pid=98 worker=w4.6 (total 52)
+[  105.63s] progress {'succeeded': 11285, 'failed': 238, 'cancelled': 3588, 'queued': 34878, 'running': 11} posts_left=0 kills=52 freezes=0
+[  106.19s] kill -9 slot=7 pid=102 worker=w7.9 (total 53)
+[  108.54s] kill -9 slot=0 pid=68 worker=w0.4 (total 54)
+[  110.65s] progress {'succeeded': 11821, 'failed': 246, 'cancelled': 3597, 'queued': 34326, 'running': 10} posts_left=0 kills=54 freezes=0
+[  110.77s] kill -9 slot=4 pid=104 worker=w4.7 (total 55)
+[  112.51s] kill -9 slot=5 pid=92 worker=w5.6 (total 56)
+[  114.66s] kill -9 slot=3 pid=103 worker=w3.9 (total 57)
+[  115.66s] progress {'succeeded': 12338, 'failed': 256, 'cancelled': 3607, 'queued': 33788, 'running': 11} posts_left=0 kills=57 freezes=0
+[  117.15s] kill -9 slot=5 pid=108 worker=w5.7 (total 58)
+[  119.22s] kill -9 slot=3 pid=109 worker=w3.10 (total 59)
+[  120.68s] progress {'succeeded': 12854, 'failed': 269, 'cancelled': 3625, 'queued': 33242, 'running': 10} posts_left=0 kills=59 freezes=0
+[  121.01s] kill -9 slot=7 pid=105 worker=w7.10 (total 60)
+[  122.75s] kill -9 slot=3 pid=111 worker=w3.11 (total 61)
+[  124.40s] kill -9 slot=3 pid=113 worker=w3.12 (total 62)
+[  125.70s] progress {'succeeded': 13380, 'failed': 282, 'cancelled': 3631, 'queued': 32696, 'running': 11} posts_left=0 kills=62 freezes=0
+[  126.36s] kill -9 slot=2 pid=95 worker=w2.4 (total 63)
+[  128.30s] kill -9 slot=2 pid=115 worker=w2.5 (total 64)
+[  130.32s] kill -9 slot=3 pid=114 worker=w3.13 (total 65)
+[  130.72s] progress {'succeeded': 13903, 'failed': 290, 'cancelled': 3633, 'queued': 32163, 'running': 11} posts_left=0 kills=65 freezes=0
+[  132.01s] kill -9 slot=1 pid=74 worker=w1.4 (total 66)
+[  133.62s] kill -9 slot=4 pid=107 worker=w4.8 (total 67)
+[  135.41s] kill -9 slot=5 pid=110 worker=w5.8 (total 68)
+[  135.74s] progress {'succeeded': 14435, 'failed': 303, 'cancelled': 3633, 'queued': 31618, 'running': 11} posts_left=0 kills=68 freezes=0
+[  137.56s] kill -9 slot=0 pid=106 worker=w0.5 (total 69)
+[  139.63s] kill -9 slot=6 pid=100 worker=w6.9 (total 70)
+[  140.76s] progress {'succeeded': 14970, 'failed': 315, 'cancelled': 3633, 'queued': 31072, 'running': 10} posts_left=0 kills=70 freezes=0
+[  141.83s] kill -9 slot=1 pid=118 worker=w1.5 (total 71)
+[  143.44s] kill -9 slot=7 pid=112 worker=w7.11 (total 72)
+[  145.78s] progress {'succeeded': 15494, 'failed': 323, 'cancelled': 3633, 'queued': 30540, 'running': 10} posts_left=0 kills=72 freezes=0
+[  145.89s] kill -9 slot=6 pid=122 worker=w6.10 (total 73)
+[  147.49s] kill -9 slot=1 pid=123 worker=w1.6 (total 74)
+[  149.74s] kill -9 slot=4 pid=119 worker=w4.9 (total 75)
+[  150.79s] progress {'succeeded': 16018, 'failed': 336, 'cancelled': 3633, 'queued': 30002, 'running': 11} posts_left=0 kills=75 freezes=0
+[  151.67s] kill -9 slot=6 pid=125 worker=w6.11 (total 76)
+[  154.06s] kill -9 slot=3 pid=117 worker=w3.14 (total 77)
+[  155.81s] progress {'succeeded': 16549, 'failed': 340, 'cancelled': 3633, 'queued': 29468, 'running': 10} posts_left=0 kills=77 freezes=0
+[  156.48s] kill -9 slot=0 pid=121 worker=w0.6 (total 78)
+[  158.91s] kill -9 slot=4 pid=127 worker=w4.10 (total 79)
+[  160.50s] kill -9 slot=3 pid=129 worker=w3.15 (total 80)
+[  160.83s] progress {'succeeded': 17075, 'failed': 352, 'cancelled': 3633, 'queued': 28929, 'running': 11} posts_left=0 kills=80 freezes=0
+[  162.29s] kill -9 slot=3 pid=133 worker=w3.16 (total 81)
+[  163.80s] kill -9 slot=4 pid=132 worker=w4.11 (total 82)
+[  165.85s] progress {'succeeded': 17597, 'failed': 364, 'cancelled': 3633, 'queued': 28396, 'running': 10} posts_left=0 kills=82 freezes=0
+[  165.93s] kill -9 slot=5 pid=120 worker=w5.9 (total 83)
+[  167.78s] kill -9 slot=3 pid=134 worker=w3.17 (total 84)
+[  169.65s] kill -9 slot=3 pid=137 worker=w3.18 (total 85)
+[  170.87s] progress {'succeeded': 18135, 'failed': 377, 'cancelled': 3633, 'queued': 27844, 'running': 11} posts_left=0 kills=85 freezes=0
+[  171.17s] kill -9 slot=5 pid=136 worker=w5.10 (total 86)
+[  173.02s] kill -9 slot=3 pid=138 worker=w3.19 (total 87)
+[  175.11s] kill -9 slot=5 pid=139 worker=w5.11 (total 88)
+[  175.88s] progress {'succeeded': 18654, 'failed': 388, 'cancelled': 3633, 'queued': 27314, 'running': 11} posts_left=0 kills=88 freezes=0
+[  177.21s] kill -9 slot=7 pid=124 worker=w7.12 (total 89)
+[  179.30s] kill -9 slot=0 pid=131 worker=w0.7 (total 90)
+[  180.89s] progress {'succeeded': 19200, 'failed': 395, 'cancelled': 3633, 'queued': 26762, 'running': 10} posts_left=0 kills=90 freezes=0
+[  180.94s] kill -9 slot=6 pid=128 worker=w6.12 (total 91)
+[  182.51s] kill -9 slot=3 pid=140 worker=w3.20 (total 92)
+[  184.51s] kill -9 slot=7 pid=142 worker=w7.13 (total 93)
+[  185.91s] progress {'succeeded': 19718, 'failed': 409, 'cancelled': 3633, 'queued': 26229, 'running': 11} posts_left=0 kills=93 freezes=0
+[  186.93s] kill -9 slot=6 pid=144 worker=w6.13 (total 94)
+[  189.21s] kill -9 slot=2 pid=116 worker=w2.6 (total 95)
+[  190.93s] progress {'succeeded': 20252, 'failed': 421, 'cancelled': 3633, 'queued': 25684, 'running': 10} posts_left=0 kills=95 freezes=0
+[  191.15s] kill -9 slot=0 pid=143 worker=w0.8 (total 96)
+[  193.61s] kill -9 slot=3 pid=145 worker=w3.21 (total 97)
+[  195.13s] kill -9 slot=4 pid=135 worker=w4.12 (total 98)
+[  195.95s] progress {'succeeded': 20787, 'failed': 429, 'cancelled': 3633, 'queued': 25140, 'running': 11} posts_left=0 kills=98 freezes=0
+[  197.10s] kill -9 slot=0 pid=149 worker=w0.9 (total 99)
+[  199.58s] kill -9 slot=4 pid=151 worker=w4.13 (total 100)
+[  200.96s] progress {'succeeded': 21321, 'failed': 437, 'cancelled': 3633, 'queued': 24599, 'running': 10} posts_left=0 kills=100 freezes=0
+[  201.35s] kill -9 slot=1 pid=126 worker=w1.7 (total 101)
+[  203.12s] kill -9 slot=1 pid=154 worker=w1.8 (total 102)
+[  205.59s] kill -9 slot=4 pid=153 worker=w4.14 (total 103)
+[  205.98s] progress {'succeeded': 21864, 'failed': 442, 'cancelled': 3633, 'queued': 24050, 'running': 11} posts_left=0 kills=103 freezes=0
+[  207.86s] kill -9 slot=4 pid=156 worker=w4.15 (total 104)
+[  209.92s] kill -9 slot=3 pid=150 worker=w3.22 (total 105)
+[  211.00s] progress {'succeeded': 22389, 'failed': 453, 'cancelled': 3633, 'queued': 23515, 'running': 10} posts_left=0 kills=105 freezes=0
+[  212.11s] kill -9 slot=3 pid=158 worker=w3.23 (total 106)
+[  214.12s] kill -9 slot=2 pid=148 worker=w2.7 (total 107)
+[  215.78s] kill -9 slot=1 pid=155 worker=w1.9 (total 108)
+[  216.01s] progress {'succeeded': 22920, 'failed': 463, 'cancelled': 3633, 'queued': 22974, 'running': 10} posts_left=0 kills=108 freezes=0
+[  217.84s] kill -9 slot=0 pid=152 worker=w0.10 (total 109)
+[  219.69s] kill -9 slot=4 pid=157 worker=w4.16 (total 110)
+[  221.02s] progress {'succeeded': 23445, 'failed': 475, 'cancelled': 3633, 'queued': 22438, 'running': 9} posts_left=0 kills=110 freezes=0
+[  221.90s] kill -9 slot=6 pid=147 worker=w6.14 (total 111)
+[  224.10s] kill -9 slot=1 pid=161 worker=w1.10 (total 112)
+[  226.05s] progress {'succeeded': 23966, 'failed': 484, 'cancelled': 3633, 'queued': 21907, 'running': 10} posts_left=0 kills=112 freezes=0
+[  226.45s] kill -9 slot=1 pid=165 worker=w1.11 (total 113)
+[  228.59s] kill -9 slot=4 pid=163 worker=w4.17 (total 114)
+[  230.39s] kill -9 slot=0 pid=162 worker=w0.11 (total 115)
+[  231.07s] progress {'succeeded': 24480, 'failed': 493, 'cancelled': 3633, 'queued': 21383, 'running': 11} posts_left=0 kills=115 freezes=0
+[  232.66s] kill -9 slot=7 pid=146 worker=w7.14 (total 116)
+[  234.71s] kill -9 slot=5 pid=141 worker=w5.12 (total 117)
+[  236.08s] progress {'succeeded': 25021, 'failed': 503, 'cancelled': 3633, 'queued': 20833, 'running': 10} posts_left=0 kills=117 freezes=0
+[  236.70s] kill -9 slot=0 pid=168 worker=w0.12 (total 118)
+[  238.65s] kill -9 slot=3 pid=159 worker=w3.24 (total 119)
+[  240.17s] kill -9 slot=2 pid=160 worker=w2.8 (total 120)
+[  241.10s] progress {'succeeded': 25550, 'failed': 516, 'cancelled': 3633, 'queued': 20290, 'running': 11} posts_left=0 kills=120 freezes=0
+[  242.53s] kill -9 slot=4 pid=167 worker=w4.18 (total 121)
+[  244.71s] kill -9 slot=0 pid=171 worker=w0.13 (total 122)
+[  246.12s] progress {'succeeded': 26064, 'failed': 530, 'cancelled': 3633, 'queued': 19763, 'running': 10} posts_left=0 kills=122 freezes=0
+[  246.48s] kill -9 slot=7 pid=169 worker=w7.15 (total 123)
+[  248.08s] kill -9 slot=7 pid=176 worker=w7.16 (total 124)
+[  250.22s] kill -9 slot=1 pid=166 worker=w1.12 (total 125)
+[  251.14s] progress {'succeeded': 26597, 'failed': 536, 'cancelled': 3633, 'queued': 19223, 'running': 11} posts_left=0 kills=125 freezes=0
+[  252.25s] kill -9 slot=6 pid=164 worker=w6.15 (total 126)
+[  254.48s] kill -9 slot=2 pid=173 worker=w2.9 (total 127)
+[  256.13s] kill -9 slot=1 pid=178 worker=w1.13 (total 128)
+[  256.16s] progress {'succeeded': 27100, 'failed': 549, 'cancelled': 3633, 'queued': 18709, 'running': 9} posts_left=0 kills=128 freezes=0
+[  258.25s] kill -9 slot=1 pid=181 worker=w1.14 (total 129)
+[  260.18s] kill -9 slot=4 pid=174 worker=w4.19 (total 130)
+[  261.18s] progress {'succeeded': 27633, 'failed': 562, 'cancelled': 3633, 'queued': 18161, 'running': 11} posts_left=0 kills=130 freezes=0
+[  261.93s] kill -9 slot=6 pid=179 worker=w6.16 (total 131)
+[  263.73s] kill -9 slot=3 pid=172 worker=w3.25 (total 132)
+[  265.74s] kill -9 slot=2 pid=180 worker=w2.10 (total 133)
+[  266.19s] progress {'succeeded': 28147, 'failed': 581, 'cancelled': 3633, 'queued': 17628, 'running': 11} posts_left=0 kills=133 freezes=0
+[  267.37s] kill -9 slot=2 pid=186 worker=w2.11 (total 134)
+[  269.77s] kill -9 slot=2 pid=187 worker=w2.12 (total 135)
+[  271.21s] progress {'succeeded': 28668, 'failed': 593, 'cancelled': 3633, 'queued': 17096, 'running': 10} posts_left=0 kills=135 freezes=0
+[  271.36s] kill -9 slot=5 pid=170 worker=w5.13 (total 136)
+[  273.81s] kill -9 slot=4 pid=183 worker=w4.20 (total 137)
+[  275.75s] kill -9 slot=3 pid=185 worker=w3.26 (total 138)
+[  276.23s] progress {'succeeded': 29193, 'failed': 605, 'cancelled': 3633, 'queued': 16558, 'running': 11} posts_left=0 kills=138 freezes=0
+[  277.92s] kill -9 slot=7 pid=177 worker=w7.17 (total 139)
+[  280.07s] kill -9 slot=0 pid=175 worker=w0.14 (total 140)
+[  281.25s] progress {'succeeded': 29724, 'failed': 614, 'cancelled': 3633, 'queued': 16019, 'running': 10} posts_left=0 kills=140 freezes=0
+[  282.57s] kill -9 slot=3 pid=191 worker=w3.27 (total 141)
+[  284.08s] kill -9 slot=0 pid=193 worker=w0.15 (total 142)
+[  286.26s] progress {'succeeded': 30263, 'failed': 625, 'cancelled': 3633, 'queued': 15469, 'running': 10} posts_left=0 kills=142 freezes=0
+[  286.55s] kill -9 slot=0 pid=195 worker=w0.16 (total 143)
+[  288.55s] kill -9 slot=3 pid=194 worker=w3.28 (total 144)
+[  290.54s] kill -9 slot=1 pid=182 worker=w1.15 (total 145)
+[  291.28s] progress {'succeeded': 30800, 'failed': 631, 'cancelled': 3633, 'queued': 14925, 'running': 11} posts_left=0 kills=145 freezes=0
+[  292.35s] kill -9 slot=0 pid=196 worker=w0.17 (total 146)
+[  294.24s] kill -9 slot=2 pid=188 worker=w2.13 (total 147)
+[  296.31s] progress {'succeeded': 31335, 'failed': 638, 'cancelled': 3633, 'queued': 14384, 'running': 10} posts_left=0 kills=147 freezes=0
+[  296.74s] kill -9 slot=5 pid=189 worker=w5.14 (total 148)
+[  298.70s] kill -9 slot=0 pid=199 worker=w0.18 (total 149)
+[  300.21s] kill -9 slot=3 pid=197 worker=w3.29 (total 150)
+[  301.32s] progress {'succeeded': 31872, 'failed': 650, 'cancelled': 3633, 'queued': 13834, 'running': 11} posts_left=0 kills=150 freezes=0
+[  301.76s] kill -9 slot=1 pid=198 worker=w1.16 (total 151)
+[  303.87s] kill -9 slot=7 pid=192 worker=w7.18 (total 152)
+[  305.94s] kill -9 slot=6 pid=184 worker=w6.17 (total 153)
+[  306.33s] progress {'succeeded': 32397, 'failed': 660, 'cancelled': 3633, 'queued': 13299, 'running': 11} posts_left=0 kills=153 freezes=0
+[  308.03s] kill -9 slot=2 pid=200 worker=w2.14 (total 154)
+[  309.69s] kill -9 slot=6 pid=206 worker=w6.18 (total 155)
+[  311.35s] progress {'succeeded': 32917, 'failed': 671, 'cancelled': 3633, 'queued': 12769, 'running': 10} posts_left=0 kills=155 freezes=0
+[  311.94s] kill -9 slot=4 pid=190 worker=w4.21 (total 156)
+[  313.55s] kill -9 slot=3 pid=203 worker=w3.30 (total 157)
+[  315.06s] kill -9 slot=1 pid=204 worker=w1.17 (total 158)
+[  316.37s] progress {'succeeded': 33432, 'failed': 684, 'cancelled': 3633, 'queued': 12240, 'running': 11} posts_left=0 kills=158 freezes=0
+[  317.36s] kill -9 slot=1 pid=211 worker=w1.18 (total 159)
+[  319.40s] kill -9 slot=2 pid=207 worker=w2.15 (total 160)
+[  321.35s] kill -9 slot=3 pid=210 worker=w3.31 (total 161)
+[  321.39s] progress {'succeeded': 33954, 'failed': 697, 'cancelled': 3633, 'queued': 11706, 'running': 10} posts_left=0 kills=161 freezes=0
+[  323.13s] kill -9 slot=0 pid=202 worker=w0.19 (total 162)
+[  324.75s] kill -9 slot=6 pid=208 worker=w6.19 (total 163)
+[  326.37s] kill -9 slot=6 pid=216 worker=w6.20 (total 164)
+[  326.40s] progress {'succeeded': 34491, 'failed': 705, 'cancelled': 3633, 'queued': 11160, 'running': 11} posts_left=0 kills=164 freezes=0
+[  328.28s] kill -9 slot=4 pid=209 worker=w4.22 (total 165)
+[  330.45s] kill -9 slot=4 pid=218 worker=w4.23 (total 166)
+[  331.41s] progress {'succeeded': 35009, 'failed': 718, 'cancelled': 3633, 'queued': 10629, 'running': 11} posts_left=0 kills=166 freezes=0
+[  332.71s] kill -9 slot=7 pid=205 worker=w7.19 (total 167)
+[  334.91s] kill -9 slot=4 pid=219 worker=w4.24 (total 168)
+[  336.44s] progress {'succeeded': 35535, 'failed': 727, 'cancelled': 3633, 'queued': 10095, 'running': 10} posts_left=0 kills=168 freezes=0
+[  337.15s] kill -9 slot=7 pid=220 worker=w7.20 (total 169)
+[  338.94s] kill -9 slot=4 pid=221 worker=w4.25 (total 170)
+[  340.65s] kill -9 slot=5 pid=201 worker=w5.15 (total 171)
+[  341.46s] progress {'succeeded': 36059, 'failed': 736, 'cancelled': 3633, 'queued': 9561, 'running': 11} posts_left=0 kills=171 freezes=0
+[  342.60s] kill -9 slot=3 pid=214 worker=w3.32 (total 172)
+[  344.91s] kill -9 slot=4 pid=223 worker=w4.26 (total 173)
+[  346.47s] progress {'succeeded': 36596, 'failed': 744, 'cancelled': 3633, 'queued': 9017, 'running': 10} posts_left=0 kills=173 freezes=0
+[  347.20s] kill -9 slot=5 pid=224 worker=w5.16 (total 174)
+[  348.74s] kill -9 slot=2 pid=213 worker=w2.16 (total 175)
+[  351.21s] kill -9 slot=4 pid=226 worker=w4.27 (total 176)
+[  351.49s] progress {'succeeded': 37148, 'failed': 750, 'cancelled': 3633, 'queued': 8458, 'running': 11} posts_left=0 kills=176 freezes=0
+[  353.59s] kill -9 slot=6 pid=217 worker=w6.21 (total 177)
+[  355.29s] kill -9 slot=0 pid=215 worker=w0.20 (total 178)
+[  356.51s] progress {'succeeded': 37657, 'failed': 764, 'cancelled': 3633, 'queued': 7936, 'running': 10} posts_left=0 kills=178 freezes=0
+[  357.51s] kill -9 slot=2 pid=228 worker=w2.17 (total 179)
+[  359.94s] kill -9 slot=4 pid=229 worker=w4.28 (total 180)
+[  361.53s] progress {'succeeded': 38179, 'failed': 772, 'cancelled': 3633, 'queued': 7406, 'running': 10} posts_left=0 kills=180 freezes=0
+[  361.87s] kill -9 slot=3 pid=225 worker=w3.33 (total 181)
+[  364.33s] kill -9 slot=7 pid=222 worker=w7.21 (total 182)
+[  366.55s] progress {'succeeded': 38704, 'failed': 782, 'cancelled': 3633, 'queued': 6871, 'running': 10} posts_left=0 kills=182 freezes=0
+[  366.69s] kill -9 slot=7 pid=235 worker=w7.22 (total 183)
+[  368.38s] kill -9 slot=6 pid=230 worker=w6.22 (total 184)
+[  370.29s] kill -9 slot=5 pid=227 worker=w5.17 (total 185)
+[  371.57s] progress {'succeeded': 39236, 'failed': 785, 'cancelled': 3633, 'queued': 6335, 'running': 11} posts_left=0 kills=185 freezes=0
+[  372.03s] kill -9 slot=5 pid=238 worker=w5.18 (total 186)
+[  374.40s] kill -9 slot=7 pid=236 worker=w7.23 (total 187)
+[  376.59s] progress {'succeeded': 39759, 'failed': 798, 'cancelled': 3633, 'queued': 5800, 'running': 10} posts_left=0 kills=187 freezes=0
+[  376.84s] kill -9 slot=3 pid=234 worker=w3.34 (total 188)
+[  378.72s] kill -9 slot=3 pid=241 worker=w3.35 (total 189)
+[  380.30s] kill -9 slot=1 pid=212 worker=w1.19 (total 190)
+[  381.62s] progress {'succeeded': 40283, 'failed': 812, 'cancelled': 3633, 'queued': 5261, 'running': 11} posts_left=0 kills=190 freezes=0
+[  382.01s] kill -9 slot=2 pid=232 worker=w2.18 (total 191)
+[  384.20s] kill -9 slot=4 pid=233 worker=w4.29 (total 192)
+[  385.74s] kill -9 slot=3 pid=242 worker=w3.36 (total 193)
+[  386.64s] progress {'succeeded': 40819, 'failed': 819, 'cancelled': 3633, 'queued': 4718, 'running': 11} posts_left=0 kills=193 freezes=0
+[  387.63s] kill -9 slot=0 pid=231 worker=w0.21 (total 194)
+[  389.80s] kill -9 slot=7 pid=240 worker=w7.24 (total 195)
+[  391.65s] progress {'succeeded': 41343, 'failed': 831, 'cancelled': 3633, 'queued': 4183, 'running': 10} posts_left=0 kills=195 freezes=0
+[  392.25s] kill -9 slot=4 pid=245 worker=w4.30 (total 196)
+[  394.63s] kill -9 slot=6 pid=237 worker=w6.23 (total 197)
+[  396.53s] kill -9 slot=4 pid=249 worker=w4.31 (total 198)
+[  396.66s] progress {'succeeded': 41876, 'failed': 840, 'cancelled': 3633, 'queued': 3640, 'running': 11} posts_left=0 kills=198 freezes=0
+[  398.75s] kill -9 slot=0 pid=247 worker=w0.22 (total 199)
+[  400.41s] kill -9 slot=7 pid=248 worker=w7.25 (total 200)
+[  401.68s] progress {'succeeded': 42384, 'failed': 856, 'cancelled': 3633, 'queued': 3117, 'running': 10} posts_left=0 kills=200 freezes=0
+[  402.35s] kill -9 slot=7 pid=253 worker=w7.26 (total 201)
+[  404.71s] kill -9 slot=2 pid=244 worker=w2.19 (total 202)
+[  406.70s] progress {'succeeded': 42904, 'failed': 868, 'cancelled': 3633, 'queued': 2585, 'running': 10} posts_left=0 kills=202 freezes=0
+[  406.85s] kill -9 slot=4 pid=251 worker=w4.32 (total 203)
+[  409.33s] kill -9 slot=0 pid=252 worker=w0.23 (total 204)
+[  411.71s] progress {'succeeded': 43435, 'failed': 882, 'cancelled': 3633, 'queued': 2040, 'running': 10} posts_left=0 kills=204 freezes=0
+[  411.81s] kill -9 slot=3 pid=246 worker=w3.37 (total 205)
+[  413.58s] kill -9 slot=4 pid=256 worker=w4.33 (total 206)
+[  415.93s] kill -9 slot=6 pid=250 worker=w6.24 (total 207)
+[  416.73s] progress {'succeeded': 43943, 'failed': 893, 'cancelled': 3633, 'queued': 1520, 'running': 11} posts_left=0 kills=207 freezes=0
+[  418.39s] kill -9 slot=1 pid=243 worker=w1.20 (total 208)
+[  420.85s] kill -9 slot=7 pid=254 worker=w7.27 (total 209)
+[  421.75s] progress {'succeeded': 44457, 'failed': 907, 'cancelled': 3633, 'queued': 993, 'running': 10} posts_left=0 kills=209 freezes=0
+[  423.26s] kill -9 slot=4 pid=259 worker=w4.34 (total 210)
+[  425.41s] kill -9 slot=1 pid=261 worker=w1.21 (total 211)
+[  426.77s] progress {'succeeded': 44992, 'failed': 912, 'cancelled': 3633, 'queued': 453, 'running': 10} posts_left=0 kills=211 freezes=0
+[  427.07s] kill -9 slot=4 pid=263 worker=w4.35 (total 212)
+[  428.76s] kill -9 slot=1 pid=264 worker=w1.22 (total 213)
+[  430.55s] kill -9 slot=1 pid=266 worker=w1.23 (total 214)
+[  431.79s] progress {'succeeded': 45443, 'failed': 921, 'cancelled': 3633, 'running': 3} posts_left=0 kills=214 freezes=0
+[  432.15s] kill -9 slot=5 pid=239 worker=w5.19 (total 215)
+[  434.27s] kill -9 slot=4 pid=265 worker=w4.36 (total 216)
+[  436.14s] kill -9 slot=4 pid=269 worker=w4.37 (total 217)
+[  436.16s] drained=True after 436.1s
+[  474.88s] ========================================================================
+[  474.88s] PASS  no_lost_jobs                             violations=0
+[  474.88s] PASS  one_id_per_key                           violations=0
+[  474.89s] PASS  no_unexpected_jobs                       violations=0
+[  474.89s] PASS  conflicting_body_rejected                violations=0
+[  474.89s] PASS  at_most_one_effect                       violations=0
+[  474.89s] PASS  none_stuck                               violations=0
+[  474.89s] PASS  succeeded_has_exactly_one_effect         violations=0
+[  474.89s] PASS  non_succeeded_has_no_effect              violations=0
+[  474.89s] PASS  effect_written_by_current_lease          violations=0
+[  474.89s] PASS  no_double_claim                          violations=0
+[  474.89s] PASS  succeeded_never_cancel_requested         violations=0
+[  474.89s] PASS  accepted_cancel_ends_cancelled           violations=0
+[  474.89s] PASS  executions_at_least_one_per_succeeded    violations=0
+[  474.89s] ------------------------------------------------------------------------
+[  474.89s] stats   {"by_status": {"succeeded": 45446, "failed": 921, "cancelled": 3633}, "executions_per_job_histogram": {"0": 3478, "1": 46370, "2": 152}, "executions": 46674, "side_effects": 45446, "jobs": 50000}
+[  474.89s] http    {"cancel_running_202": 1295, "cancel_running_409": 205, "cancel_scheduled_200": 3478, "cancel_scheduled_202": 3, "cancel_scheduled_409": 19, "planned_posts": 79588, "post_dup_concurrent_200": 9281, "post_dup_concurrent_201": 5450, "post_dup_late_200": 14578, "post_dup_late_201": 279, "post_primary_200": 5658, "post_primary_201": 41842, "post_response_dropped": 2500, "post_retry_after_drop_200": 2500}
+[  474.89s] events  {"claimed": 46673, "finished": 46462, "reaped": 212, "worker_started": 224, "worker_stopped": 7}
+[  474.89s] chaos   kills=217 freezes=0 db_crashes=0 spawns=225 elapsed=474.9s
+[  474.89s] RESULT  PASS  mutation=none seed=5001

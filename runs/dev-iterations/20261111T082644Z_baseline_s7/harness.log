@@ -1,0 +1,35 @@
+[    0.00s] config {"jobs": 1000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 20, "work_ms_max": 120, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 7, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/private/tmp/claude-501/-Users-sayfulla--claude-spares-spare-evGrUB/09dcb3e3-dff3-4d16-9fc0-b6e62ab524b2/scratchpad/runs2"}
+[    0.74s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    2.49s] kill -9 slot=4 pid=39156 worker=w4.0 (total 1)
+[    4.32s] kill -9 slot=3 pid=39155 worker=w3.0 (total 2)
+[    5.80s] progress {'running': 9, 'queued': 1, 'failed': 15, 'succeeded': 453} posts_left=858 kills=2 freezes=0
+[    6.54s] kill -9 slot=6 pid=39158 worker=w6.0 (total 3)
+[    7.20s] all POSTs done in 7.2s; waiting for cancels/conflicts
+[    8.20s] kill -9 slot=7 pid=39159 worker=w7.0 (total 4)
+[   10.60s] kill -9 slot=1 pid=39153 worker=w1.0 (total 5)
+[   10.81s] progress {'succeeded': 957, 'failed': 23, 'cancelled': 17, 'running': 3} posts_left=0 kills=5 freezes=0
+[   12.31s] kill -9 slot=4 pid=39162 worker=w4.1 (total 6)
+[   14.68s] kill -9 slot=1 pid=39170 worker=w1.1 (total 7)
+[   15.83s] progress {'succeeded': 959, 'failed': 23, 'cancelled': 18} posts_left=0 kills=7 freezes=0
+[   16.39s] kill -9 slot=7 pid=39169 worker=w7.1 (total 8)
+[   16.53s] drained=True after 16.5s
+[   16.82s] ========================================================================
+[   16.82s] PASS  no_lost_jobs                             violations=0
+[   16.82s] PASS  one_id_per_key                           violations=0
+[   16.82s] PASS  no_unexpected_jobs                       violations=0
+[   16.82s] PASS  conflicting_body_rejected                violations=0
+[   16.82s] PASS  at_most_one_effect                       violations=0
+[   16.82s] PASS  none_stuck                               violations=0
+[   16.82s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   16.82s] PASS  non_succeeded_has_no_effect              violations=0
+[   16.82s] PASS  effect_written_by_current_lease          violations=0
+[   16.82s] PASS  no_double_claim                          violations=0
+[   16.82s] PASS  succeeded_never_cancel_requested         violations=0
+[   16.82s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   16.82s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   16.82s] ------------------------------------------------------------------------
+[   16.82s] stats   {"by_status": {"succeeded": 959, "failed": 23, "cancelled": 18}, "executions_per_job_histogram": {"0": 14, "1": 984, "2": 2}, "executions": 988, "side_effects": 959, "jobs": 1000}
+[   16.82s] http    {"cancel_running_202": 13, "cancel_running_409": 17, "cancel_scheduled_200": 14, "cancel_scheduled_202": 1, "cancel_scheduled_409": 55, "planned_posts": 1600, "post_dup_concurrent_200": 202, "post_dup_concurrent_201": 114, "post_dup_late_200": 279, "post_dup_late_201": 5, "post_primary_200": 117, "post_primary_201": 833, "post_response_dropped": 50, "post_retry_after_drop_200": 50}
+[   16.82s] events  {"claimed": 988, "finished": 983, "reaped": 5, "worker_started": 15, "worker_stopped": 7}
+[   16.82s] chaos   kills=8 freezes=0 spawns=16 elapsed=16.8s
+[   16.82s] RESULT  PASS  mutation=none seed=7

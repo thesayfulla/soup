@@ -1,0 +1,47 @@
+[    0.00s] config {"jobs": 3000, "workers": 8, "kill_every": 2.0, "kill_jitter": 0.5, "freeze_every": 0.0, "freeze_for": 11.0, "db_crash_every": 15.0, "db_crash_cmd": "docker kill -s KILL soup-postgres-1 && docker start soup-postgres-1", "dup_ratio": 0.3, "retry_ratio": 0.05, "conflict_ratio": 0.01, "cancel_ratio": 0.1, "fail_ratio": 0.02, "concurrency": 64, "lease": 5.0, "heartbeat": 1.0, "work_ms_min": 20, "work_ms_max": 120, "mutation": "none", "skew": 0.0, "timeout": 900.0, "seed": 4001, "runs": 1, "port": 8100, "db": "postgresql://soup:soup@localhost:55432/soup_chaos", "out": "/Users/sayfulla/Projects/soup/runs"}
+[    1.01s] api up, 8 workers started: ['w0.0', 'w1.0', 'w2.0', 'w3.0', 'w4.0', 'w5.0', 'w6.0', 'w7.0']
+[    3.09s] kill -9 slot=2 pid=42529 worker=w2.0 (total 1)
+[    5.01s] kill -9 slot=0 pid=42527 worker=w0.0 (total 2)
+[    6.06s] progress {'running': 7, 'queued': 2, 'failed': 12, 'succeeded': 449} posts_left=4139 kills=2 freezes=0
+[    7.51s] kill -9 slot=4 pid=42531 worker=w4.0 (total 3)
+[    9.12s] kill -9 slot=3 pid=42530 worker=w3.0 (total 4)
+[   11.08s] progress {'cancelled': 55, 'running': 10, 'queued': 1085, 'failed': 16, 'succeeded': 966} posts_left=1453 kills=4 freezes=0
+[   11.22s] kill -9 slot=1 pid=42528 worker=w1.0 (total 5)
+[   13.61s] kill -9 slot=6 pid=42533 worker=w6.0 (total 6)
+[   14.30s] all POSTs done in 14.2s; waiting for cancels/conflicts
+[   16.07s] kill -9 slot=3 pid=42542 worker=w3.1 (total 7)
+[   16.09s] progress None posts_left=0 kills=7 freezes=0
+[   16.24s] POSTGRES CRASH #1 rc=0  (0.2s)
+[   18.19s] kill -9 slot=1 pid=42543 worker=w1.1 (total 8)
+[   19.77s] kill -9 slot=1 pid=42552 worker=w1.2 (total 9)
+[   21.10s] progress {'cancelled': 170, 'running': 9, 'queued': 867, 'failed': 37, 'succeeded': 1917} posts_left=0 kills=9 freezes=0
+[   22.09s] kill -9 slot=2 pid=42535 worker=w2.1 (total 10)
+[   24.18s] kill -9 slot=0 pid=42537 worker=w0.1 (total 11)
+[   25.92s] kill -9 slot=6 pid=42545 worker=w6.1 (total 12)
+[   26.10s] progress {'cancelled': 170, 'running': 10, 'queued': 361, 'failed': 53, 'succeeded': 2406} posts_left=0 kills=12 freezes=0
+[   28.34s] kill -9 slot=1 pid=42554 worker=w1.3 (total 13)
+[   30.15s] kill -9 slot=4 pid=42538 worker=w4.1 (total 14)
+[   31.12s] progress {'cancelled': 170, 'running': 2, 'failed': 58, 'succeeded': 2770} posts_left=0 kills=14 freezes=0
+[   31.44s] POSTGRES CRASH #2 rc=0  (0.2s)
+[   32.01s] kill -9 slot=5 pid=42532 worker=w5.0 (total 15)
+[   34.20s] drained=True after 34.1s
+[   34.53s] ========================================================================
+[   34.53s] PASS  no_lost_jobs                             violations=0
+[   34.53s] PASS  one_id_per_key                           violations=0
+[   34.53s] PASS  no_unexpected_jobs                       violations=0
+[   34.53s] PASS  conflicting_body_rejected                violations=0
+[   34.53s] PASS  at_most_one_effect                       violations=0
+[   34.53s] PASS  none_stuck                               violations=0
+[   34.53s] PASS  succeeded_has_exactly_one_effect         violations=0
+[   34.53s] PASS  non_succeeded_has_no_effect              violations=0
+[   34.53s] PASS  effect_written_by_current_lease          violations=0
+[   34.53s] PASS  no_double_claim                          violations=0
+[   34.53s] PASS  succeeded_never_cancel_requested         violations=0
+[   34.53s] PASS  accepted_cancel_ends_cancelled           violations=0
+[   34.53s] PASS  executions_at_least_one_per_succeeded    violations=0
+[   34.53s] ------------------------------------------------------------------------
+[   34.53s] stats   {"by_status": {"cancelled": 170, "failed": 58, "succeeded": 2772}, "executions_per_job_histogram": {"0": 164, "1": 2824, "2": 12}, "executions": 2848, "side_effects": 2772, "jobs": 3000}
+[   34.53s] http    {"cancel_running_202": 54, "cancel_running_409": 36, "cancel_scheduled_200": 164, "cancel_scheduled_409": 46, "planned_posts": 4897, "post_dup_concurrent_200": 562, "post_dup_concurrent_201": 366, "post_dup_late_200": 949, "post_dup_late_201": 20, "post_primary_200": 373, "post_primary_201": 2477, "post_response_dropped": 150, "post_retry_after_drop_200": 150}
+[   34.53s] events  {"claimed": 2848, "db_error": 15, "finished": 2829, "reaped": 17, "worker_started": 23, "worker_stopped": 8}
+[   34.53s] chaos   kills=15 freezes=0 db_crashes=2 spawns=23 elapsed=34.5s
+[   34.53s] RESULT  PASS  mutation=none seed=4001
