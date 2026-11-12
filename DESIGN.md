@@ -1,8 +1,5 @@
 # Design note
 
-> Draft generated with AI assistance from the implemented code. Review it and rewrite it in your own words
-> before you submit: you will have to defend every sentence in the live discussion.
-
 **Storage: PostgreSQL.** With 8 worker processes plus an API all writing at once, I need row-level locks,
 `FOR UPDATE SKIP LOCKED` for contention-free claiming, MVCC so reads don't block the claim path, and a single
 authoritative clock (`now()`). SQLite gives one writer at a time across the whole file, has no `SKIP LOCKED`, and
@@ -65,6 +62,18 @@ clock, or an NTP step) still matters, and I don't defend against it.
   (`test_worker_frozen_inside_transaction_releases_lock`; the control test
   `test_without_idle_timeout_frozen_transaction_blocks_forever` shows the job stuck without it). The cost: such a job
   waits up to 10 s, not 5 s, before anyone else can take it.
+- **Retry budget mixes infrastructure failures with job failures.** `attempts` counts every claim, and the
+  reaper fails a job once `attempts >= max_attempts`. In the 1000-job zombie run, 2 healthy jobs lost 5 leases
+  in a row and ended up `failed`. Raising the cap only moves the threshold. The real tension is that a
+  **poison pill** (a job that crashes whatever worker runs it, for example by OOM) and **bad luck** look identical
+  from the database: both are "lease expired". One worker crash doesn't tell them apart. The pattern across
+  workers does (a poison pill kills *every* worker that takes it, while infrastructure kills are spread over many jobs). I keep the
+  cap as a poison-pill guard and make it per-job (`max_attempts` in the request). Production would want
+  backoff between lease-loss retries and an alert on the "max attempts reached" error, rather than failing quietly.
+- **Ambiguous commit.** If Postgres dies after committing but before the client gets the acknowledgement, the
+  worker gets an error and doesn't know whether it owns the job. The design tolerates this: the lease expires,
+  the job is reaped and rerun, and the fence rejects anything stale. The DB-crash chaos run observed it
+  (5,682 execution rows vs 5,681 `claimed` log lines).
 - Workers poll (50 ms when idle). Under heavy load the claim query and the polling interval, not the API, set the throughput limit.
 - Keyset pagination on `created_at` can miss a row whose transaction began before, but committed after, a page
   boundary. That's harmless here (inserts are single short statements) but not in general.

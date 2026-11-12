@@ -1,5 +1,12 @@
 # soup — training-job queue
 
+## Write-ups
+
+- **Design note:** [DESIGN.md](DESIGN.md)
+- **Evidence, silent failures, 100 RPS verdict (§5), reflection (§6):** [RESULTS.md](RESULTS.md)
+- **AI usage:** [AI_USAGE.md](AI_USAGE.md)
+- **Raw output of every harness and load run:** [runs/](runs/) (`runs/index.tsv` lists all of them, pass and fail)
+
 ## Run
 
 ```bash
